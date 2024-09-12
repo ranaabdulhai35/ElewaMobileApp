@@ -1,0 +1,963 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E356F31AD99517003FC87E /* ElewaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ElewaTests.m */; };
+		0C80B921A6F3F58F76C31292 /* libPods-Elewa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Elewa.a */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		7699B88040F8A987B510C191 /* libPods-Elewa-ElewaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Elewa-ElewaTests.a */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A95843722FA643E0A1D48DD1 /* TT Hoves Pro Bold Outline Trial Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E56C6D2FA2C8404C869A2CD0 /* TT Hoves Pro Bold Outline Trial Italic.ttf */; };
+		C772A29E42D14BCDB42D765D /* TT Hoves Pro Bold Outline Trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 614AC61B16644E4685A0ED91 /* TT Hoves Pro Bold Outline Trial.ttf */; };
+		BCFB6F563C544315A3526315 /* TT Hoves Pro Trial Black Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E0A7D6E7FB8446691D612BE /* TT Hoves Pro Trial Black Italic.ttf */; };
+		6B5BADB14D98409C8F1D0A21 /* TT Hoves Pro Trial Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B331431AFD847BA82C4F08A /* TT Hoves Pro Trial Black.ttf */; };
+		F365C8DABA5E4BA09D042F74 /* TT Hoves Pro Trial Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF49AF0A53384A698ED8E578 /* TT Hoves Pro Trial Bold Italic.ttf */; };
+		2E4DC1DC2826494DB0301AA8 /* TT Hoves Pro Trial Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93A5E15CFE974FD1878BF89E /* TT Hoves Pro Trial Bold.ttf */; };
+		4F807BC00DFB4C5C96C517FB /* TT Hoves Pro Trial Condensed Black Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA04A579578947C5956F2857 /* TT Hoves Pro Trial Condensed Black Italic.ttf */; };
+		E97EFE31B7EF4A9AB5FCC63C /* TT Hoves Pro Trial Condensed Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F928B1DB260B45ADAD1FD596 /* TT Hoves Pro Trial Condensed Black.ttf */; };
+		6F33232D7B0844A4A18AABA0 /* TT Hoves Pro Trial Condensed Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A4E2F76938B49C09CE8B4B7 /* TT Hoves Pro Trial Condensed Bold Italic.ttf */; };
+		1CC1F487D2B549278CEB231E /* TT Hoves Pro Trial Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B166F2BBC37B4AF9A25BF5AF /* TT Hoves Pro Trial Condensed Bold.ttf */; };
+		A093CDE5791E400EB60F5454 /* TT Hoves Pro Trial Condensed DemiBold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0E99EDF794844F8A0AC3EF5 /* TT Hoves Pro Trial Condensed DemiBold Italic.ttf */; };
+		E4442477A9074C8F9CAE02B5 /* TT Hoves Pro Trial Condensed DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D099144A9A97416E853A923B /* TT Hoves Pro Trial Condensed DemiBold.ttf */; };
+		A9F140B01EA344F4B8B40980 /* TT Hoves Pro Trial Condensed ExtraBold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7C1FFCB1C7F48BDA7176195 /* TT Hoves Pro Trial Condensed ExtraBold Italic.ttf */; };
+		F706F7738E30416EA8D7A76A /* TT Hoves Pro Trial Condensed ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F45AD2F028F84CAEB5AD822B /* TT Hoves Pro Trial Condensed ExtraBold.ttf */; };
+		725C3266BDA4456DBD91D8C1 /* TT Hoves Pro Trial Condensed ExtraLight Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DB202D64F304482A1F674C4 /* TT Hoves Pro Trial Condensed ExtraLight Italic.ttf */; };
+		9F6D5369D3814BFEB7BD19D5 /* TT Hoves Pro Trial Condensed ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 876EF4C6604E439C9C585B93 /* TT Hoves Pro Trial Condensed ExtraLight.ttf */; };
+		FFFB9FBB3CC44B778F875B48 /* TT Hoves Pro Trial Condensed Hairline Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B83D9F30244306887BBA28 /* TT Hoves Pro Trial Condensed Hairline Italic.ttf */; };
+		E7A8B73560DB43CCB1538E0C /* TT Hoves Pro Trial Condensed Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AA31E6C9A30404CAF48BDFE /* TT Hoves Pro Trial Condensed Hairline.ttf */; };
+		DEADBB79BE134971B4891C5F /* TT Hoves Pro Trial Condensed Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F09B446CC4024F908C3F965A /* TT Hoves Pro Trial Condensed Italic.ttf */; };
+		2F80391ED2184F979C78E144 /* TT Hoves Pro Trial Condensed Light Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D2EE1633053491A83EED30F /* TT Hoves Pro Trial Condensed Light Italic.ttf */; };
+		2C5F8C80EAFE41A2AF9FC95C /* TT Hoves Pro Trial Condensed Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FD4B18599F64411925BB528 /* TT Hoves Pro Trial Condensed Light.ttf */; };
+		B398D9B355504D26800689FC /* TT Hoves Pro Trial Condensed Medium Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D59753970EF8478CBD01D7D2 /* TT Hoves Pro Trial Condensed Medium Italic.ttf */; };
+		16BDB18994EB4765A25F4E71 /* TT Hoves Pro Trial Condensed Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC4F85F1436E459E9C06381D /* TT Hoves Pro Trial Condensed Medium.ttf */; };
+		604E83B4B4254302994B25A1 /* TT Hoves Pro Trial Condensed Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDBEA4A609DE457287233CB3 /* TT Hoves Pro Trial Condensed Regular.ttf */; };
+		F261A89E6451404E8AD213AE /* TT Hoves Pro Trial Condensed Thin Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1D15C8AE15245899BEEB138 /* TT Hoves Pro Trial Condensed Thin Italic.ttf */; };
+		9A36F07F529F40D1A124E29E /* TT Hoves Pro Trial Condensed Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D5DF65A32D6E442189C89A5A /* TT Hoves Pro Trial Condensed Thin.ttf */; };
+		823D5A57AB094B80A71ACF4A /* TT Hoves Pro Trial DemiBold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55F71755454F40C38C384F3A /* TT Hoves Pro Trial DemiBold Italic.ttf */; };
+		59E65B6035CA445496085059 /* TT Hoves Pro Trial DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73919EE926884053A0629250 /* TT Hoves Pro Trial DemiBold.ttf */; };
+		3746CD9B19254516A66FC6F9 /* TT Hoves Pro Trial Expanded Black Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F7B4BF618984C1F86C036D2 /* TT Hoves Pro Trial Expanded Black Italic.ttf */; };
+		AFBDE9A294F548B6BB137ACA /* TT Hoves Pro Trial Expanded Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D100AEB11A44C42B26D5D13 /* TT Hoves Pro Trial Expanded Black.ttf */; };
+		4B1A4221ECAE4A9CBD8BA183 /* TT Hoves Pro Trial Expanded Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD9D12D624184358B0FA56A4 /* TT Hoves Pro Trial Expanded Bold Italic.ttf */; };
+		BF850125DF944789AB36D9A8 /* TT Hoves Pro Trial Expanded Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABD66ED94CD545AA9BD42E39 /* TT Hoves Pro Trial Expanded Bold.ttf */; };
+		A6F9FE690E894A2381E3CFB9 /* TT Hoves Pro Trial Expanded DemiBold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AD7ECB7178143DA8478C786 /* TT Hoves Pro Trial Expanded DemiBold Italic.ttf */; };
+		AEE6DDD485BC4DDAAB4F5F81 /* TT Hoves Pro Trial Expanded DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6985971441C4226AFDA60D5 /* TT Hoves Pro Trial Expanded DemiBold.ttf */; };
+		2899E946850E4F0DB465032D /* TT Hoves Pro Trial Expanded ExtraBold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C1D516EB49D44BE957A36A0 /* TT Hoves Pro Trial Expanded ExtraBold Italic.ttf */; };
+		832266861D874371A31E347E /* TT Hoves Pro Trial Expanded ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4793BF76A6E462498A944D9 /* TT Hoves Pro Trial Expanded ExtraBold.ttf */; };
+		AAE207E035E84E4AAEFE21C3 /* TT Hoves Pro Trial Expanded ExtraLight Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E430AC3E3C14E8C8C5EEE4E /* TT Hoves Pro Trial Expanded ExtraLight Italic.ttf */; };
+		9004115E9EF34942BC1B057B /* TT Hoves Pro Trial Expanded ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0C2C506222D4291AC70FA93 /* TT Hoves Pro Trial Expanded ExtraLight.ttf */; };
+		B4B28E34F98D413892BE5874 /* TT Hoves Pro Trial Expanded Hairline Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C864B989DC54712842F83FA /* TT Hoves Pro Trial Expanded Hairline Italic.ttf */; };
+		682E77A8B8B046D9B646FC36 /* TT Hoves Pro Trial Expanded Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14CC6A8558E48C1857729E0 /* TT Hoves Pro Trial Expanded Hairline.ttf */; };
+		39BCEFFFA62047F589CCE290 /* TT Hoves Pro Trial Expanded Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA863206AD464AE8B53D0512 /* TT Hoves Pro Trial Expanded Italic.ttf */; };
+		8D99C2409D404D4B9F232311 /* TT Hoves Pro Trial Expanded Light Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 396B250DEC4E41EA8A5D0AC2 /* TT Hoves Pro Trial Expanded Light Italic.ttf */; };
+		639F2C63EC304E23B288F404 /* TT Hoves Pro Trial Expanded Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC6F39AAA22840E7A7BAC5B5 /* TT Hoves Pro Trial Expanded Light.ttf */; };
+		3C5B9DFEA0094AECB058E069 /* TT Hoves Pro Trial Expanded Medium Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0F26E9C9F2A46E7B119C7BC /* TT Hoves Pro Trial Expanded Medium Italic.ttf */; };
+		89DF3615696B41DEA2E6877F /* TT Hoves Pro Trial Expanded Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 135BD2E2D2CB4565A68D84DD /* TT Hoves Pro Trial Expanded Medium.ttf */; };
+		BD9214944C0D4BBABA994E51 /* TT Hoves Pro Trial Expanded Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC80690955BE4D8E8C919331 /* TT Hoves Pro Trial Expanded Regular.ttf */; };
+		56344310549E426EBD86B058 /* TT Hoves Pro Trial Expanded Thin Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A1AB801118C46DDA76ACD7B /* TT Hoves Pro Trial Expanded Thin Italic.ttf */; };
+		27C034D6F09A4346BD3BE112 /* TT Hoves Pro Trial Expanded Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC295D2C2D0C4309AA3A638E /* TT Hoves Pro Trial Expanded Thin.ttf */; };
+		5F0C3E7868FC4CF2BBACAC1A /* TT Hoves Pro Trial ExtraBold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78F187EEB52E4823A125EC5B /* TT Hoves Pro Trial ExtraBold Italic.ttf */; };
+		D2D7E10828584651A91990B2 /* TT Hoves Pro Trial ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E6AE35D1D2F4EED9CD4151D /* TT Hoves Pro Trial ExtraBold.ttf */; };
+		CF4D48F961BD41A99B2217BE /* TT Hoves Pro Trial ExtraLight Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67C9B9BF9BB2442CB2BA28C9 /* TT Hoves Pro Trial ExtraLight Italic.ttf */; };
+		5A51B5332BFD4947A77D07F2 /* TT Hoves Pro Trial ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C584B26F963C4B17BF3661E5 /* TT Hoves Pro Trial ExtraLight.ttf */; };
+		330E6A107AA149F9852B7A87 /* TT Hoves Pro Trial Hairline Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FD561DCC4FA45A0A566BEA1 /* TT Hoves Pro Trial Hairline Italic.ttf */; };
+		148B517E8DEE40F8931E3ECA /* TT Hoves Pro Trial Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14AF304DEC554B21AA5BBEAF /* TT Hoves Pro Trial Hairline.ttf */; };
+		35AFE2C1B33C46DBA5CBD347 /* TT Hoves Pro Trial Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3F2AE0FBF254E138955A648 /* TT Hoves Pro Trial Italic.ttf */; };
+		2C8DE20794244803A49A5986 /* TT Hoves Pro Trial Light Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C53714EFBAA0407BA3F14CF9 /* TT Hoves Pro Trial Light Italic.ttf */; };
+		FF7BF8698A1149738F87427D /* TT Hoves Pro Trial Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B95F3FEF46645078E4134E9 /* TT Hoves Pro Trial Light.ttf */; };
+		CFF070439ADA4D72B5A2AC91 /* TT Hoves Pro Trial Medium Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E7D85AEB7504B6DB15745C7 /* TT Hoves Pro Trial Medium Italic.ttf */; };
+		389C4E5E17524AEF930F6E33 /* TT Hoves Pro Trial Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0D4334E34D74D17A418CCC7 /* TT Hoves Pro Trial Medium.ttf */; };
+		8F13818ACB004DEB9860CFEA /* TT Hoves Pro Trial Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BAA42595EFD4FB8B63814D6 /* TT Hoves Pro Trial Regular.ttf */; };
+		9F491E88A31E46B496EA3CD4 /* TT Hoves Pro Trial Thin Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8C5EDAD834A46D28CDEE17B /* TT Hoves Pro Trial Thin Italic.ttf */; };
+		60FEEB53993E43838F331858 /* TT Hoves Pro Trial Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 885C7E95C85B42C48B6C5D20 /* TT Hoves Pro Trial Thin.ttf */; };
+		2706F9DBA9524F6ABC40A26D /* TT Hoves Pro Trial Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA87C5621B2343E2894D7176 /* TT Hoves Pro Trial Variable.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = Elewa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E356EE1AD99517003FC87E /* ElewaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElewaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* ElewaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElewaTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Elewa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elewa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Elewa/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Elewa/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Elewa/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Elewa/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Elewa/main.m; sourceTree = "<group>"; };
+		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Elewa-ElewaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Elewa-ElewaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4392A12AC88292D35C810B /* Pods-Elewa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elewa.debug.xcconfig"; path = "Target Support Files/Pods-Elewa/Pods-Elewa.debug.xcconfig"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-Elewa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elewa.release.xcconfig"; path = "Target Support Files/Pods-Elewa/Pods-Elewa.release.xcconfig"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-Elewa-ElewaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elewa-ElewaTests.debug.xcconfig"; path = "Target Support Files/Pods-Elewa-ElewaTests/Pods-Elewa-ElewaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-Elewa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Elewa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Elewa/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-Elewa-ElewaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elewa-ElewaTests.release.xcconfig"; path = "Target Support Files/Pods-Elewa-ElewaTests/Pods-Elewa-ElewaTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		E56C6D2FA2C8404C869A2CD0 /* TT Hoves Pro Bold Outline Trial Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Bold Outline Trial Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Bold Outline Trial Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		614AC61B16644E4685A0ED91 /* TT Hoves Pro Bold Outline Trial.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Bold Outline Trial.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Bold Outline Trial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5E0A7D6E7FB8446691D612BE /* TT Hoves Pro Trial Black Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Black Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Black Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9B331431AFD847BA82C4F08A /* TT Hoves Pro Trial Black.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Black.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BF49AF0A53384A698ED8E578 /* TT Hoves Pro Trial Bold Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Bold Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Bold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		93A5E15CFE974FD1878BF89E /* TT Hoves Pro Trial Bold.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Bold.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CA04A579578947C5956F2857 /* TT Hoves Pro Trial Condensed Black Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Black Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Black Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F928B1DB260B45ADAD1FD596 /* TT Hoves Pro Trial Condensed Black.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Black.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8A4E2F76938B49C09CE8B4B7 /* TT Hoves Pro Trial Condensed Bold Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Bold Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Bold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B166F2BBC37B4AF9A25BF5AF /* TT Hoves Pro Trial Condensed Bold.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Bold.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A0E99EDF794844F8A0AC3EF5 /* TT Hoves Pro Trial Condensed DemiBold Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed DemiBold Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed DemiBold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D099144A9A97416E853A923B /* TT Hoves Pro Trial Condensed DemiBold.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed DemiBold.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed DemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E7C1FFCB1C7F48BDA7176195 /* TT Hoves Pro Trial Condensed ExtraBold Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed ExtraBold Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed ExtraBold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F45AD2F028F84CAEB5AD822B /* TT Hoves Pro Trial Condensed ExtraBold.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed ExtraBold.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1DB202D64F304482A1F674C4 /* TT Hoves Pro Trial Condensed ExtraLight Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed ExtraLight Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed ExtraLight Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		876EF4C6604E439C9C585B93 /* TT Hoves Pro Trial Condensed ExtraLight.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed ExtraLight.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E2B83D9F30244306887BBA28 /* TT Hoves Pro Trial Condensed Hairline Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Hairline Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Hairline Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7AA31E6C9A30404CAF48BDFE /* TT Hoves Pro Trial Condensed Hairline.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Hairline.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Hairline.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F09B446CC4024F908C3F965A /* TT Hoves Pro Trial Condensed Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7D2EE1633053491A83EED30F /* TT Hoves Pro Trial Condensed Light Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Light Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Light Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1FD4B18599F64411925BB528 /* TT Hoves Pro Trial Condensed Light.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Light.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D59753970EF8478CBD01D7D2 /* TT Hoves Pro Trial Condensed Medium Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Medium Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Medium Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EC4F85F1436E459E9C06381D /* TT Hoves Pro Trial Condensed Medium.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Medium.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CDBEA4A609DE457287233CB3 /* TT Hoves Pro Trial Condensed Regular.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Regular.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D1D15C8AE15245899BEEB138 /* TT Hoves Pro Trial Condensed Thin Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Thin Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Thin Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D5DF65A32D6E442189C89A5A /* TT Hoves Pro Trial Condensed Thin.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Condensed Thin.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Condensed Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		55F71755454F40C38C384F3A /* TT Hoves Pro Trial DemiBold Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial DemiBold Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial DemiBold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		73919EE926884053A0629250 /* TT Hoves Pro Trial DemiBold.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial DemiBold.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial DemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2F7B4BF618984C1F86C036D2 /* TT Hoves Pro Trial Expanded Black Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Black Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Black Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4D100AEB11A44C42B26D5D13 /* TT Hoves Pro Trial Expanded Black.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Black.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FD9D12D624184358B0FA56A4 /* TT Hoves Pro Trial Expanded Bold Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Bold Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Bold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ABD66ED94CD545AA9BD42E39 /* TT Hoves Pro Trial Expanded Bold.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Bold.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8AD7ECB7178143DA8478C786 /* TT Hoves Pro Trial Expanded DemiBold Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded DemiBold Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded DemiBold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D6985971441C4226AFDA60D5 /* TT Hoves Pro Trial Expanded DemiBold.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded DemiBold.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded DemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8C1D516EB49D44BE957A36A0 /* TT Hoves Pro Trial Expanded ExtraBold Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded ExtraBold Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded ExtraBold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B4793BF76A6E462498A944D9 /* TT Hoves Pro Trial Expanded ExtraBold.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded ExtraBold.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6E430AC3E3C14E8C8C5EEE4E /* TT Hoves Pro Trial Expanded ExtraLight Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded ExtraLight Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded ExtraLight Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D0C2C506222D4291AC70FA93 /* TT Hoves Pro Trial Expanded ExtraLight.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded ExtraLight.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4C864B989DC54712842F83FA /* TT Hoves Pro Trial Expanded Hairline Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Hairline Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Hairline Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C14CC6A8558E48C1857729E0 /* TT Hoves Pro Trial Expanded Hairline.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Hairline.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Hairline.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BA863206AD464AE8B53D0512 /* TT Hoves Pro Trial Expanded Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		396B250DEC4E41EA8A5D0AC2 /* TT Hoves Pro Trial Expanded Light Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Light Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Light Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DC6F39AAA22840E7A7BAC5B5 /* TT Hoves Pro Trial Expanded Light.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Light.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C0F26E9C9F2A46E7B119C7BC /* TT Hoves Pro Trial Expanded Medium Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Medium Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Medium Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		135BD2E2D2CB4565A68D84DD /* TT Hoves Pro Trial Expanded Medium.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Medium.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EC80690955BE4D8E8C919331 /* TT Hoves Pro Trial Expanded Regular.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Regular.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0A1AB801118C46DDA76ACD7B /* TT Hoves Pro Trial Expanded Thin Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Thin Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Thin Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FC295D2C2D0C4309AA3A638E /* TT Hoves Pro Trial Expanded Thin.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Expanded Thin.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Expanded Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		78F187EEB52E4823A125EC5B /* TT Hoves Pro Trial ExtraBold Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial ExtraBold Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial ExtraBold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1E6AE35D1D2F4EED9CD4151D /* TT Hoves Pro Trial ExtraBold.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial ExtraBold.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		67C9B9BF9BB2442CB2BA28C9 /* TT Hoves Pro Trial ExtraLight Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial ExtraLight Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial ExtraLight Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C584B26F963C4B17BF3661E5 /* TT Hoves Pro Trial ExtraLight.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial ExtraLight.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2FD561DCC4FA45A0A566BEA1 /* TT Hoves Pro Trial Hairline Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Hairline Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Hairline Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		14AF304DEC554B21AA5BBEAF /* TT Hoves Pro Trial Hairline.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Hairline.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Hairline.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D3F2AE0FBF254E138955A648 /* TT Hoves Pro Trial Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C53714EFBAA0407BA3F14CF9 /* TT Hoves Pro Trial Light Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Light Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Light Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1B95F3FEF46645078E4134E9 /* TT Hoves Pro Trial Light.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Light.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2E7D85AEB7504B6DB15745C7 /* TT Hoves Pro Trial Medium Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Medium Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Medium Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E0D4334E34D74D17A418CCC7 /* TT Hoves Pro Trial Medium.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Medium.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1BAA42595EFD4FB8B63814D6 /* TT Hoves Pro Trial Regular.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Regular.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F8C5EDAD834A46D28CDEE17B /* TT Hoves Pro Trial Thin Italic.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Thin Italic.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Thin Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		885C7E95C85B42C48B6C5D20 /* TT Hoves Pro Trial Thin.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Thin.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BA87C5621B2343E2894D7176 /* TT Hoves Pro Trial Variable.ttf */ = {isa = PBXFileReference; name = "TT Hoves Pro Trial Variable.ttf"; path = "../src/Ui/assets/fonts/TT Hoves Pro Trial Variable.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7699B88040F8A987B510C191 /* libPods-Elewa-ElewaTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C80B921A6F3F58F76C31292 /* libPods-Elewa.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* ElewaTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* ElewaTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = ElewaTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* Elewa */ = {
+			isa = PBXGroup;
+			children = (
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = Elewa;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-Elewa.a */,
+				19F6CBCC0A4E27FBF8BF4A61 /* libPods-Elewa-ElewaTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				13B07FAE1A68108700A75B9A /* Elewa */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* ElewaTests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				2EDC65C174174DE69592C18B /* Resources */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* Elewa.app */,
+				00E356EE1AD99517003FC87E /* ElewaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B4392A12AC88292D35C810B /* Pods-Elewa.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-Elewa.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-Elewa-ElewaTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-Elewa-ElewaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2EDC65C174174DE69592C18B /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				E56C6D2FA2C8404C869A2CD0 /* TT Hoves Pro Bold Outline Trial Italic.ttf */,
+				614AC61B16644E4685A0ED91 /* TT Hoves Pro Bold Outline Trial.ttf */,
+				5E0A7D6E7FB8446691D612BE /* TT Hoves Pro Trial Black Italic.ttf */,
+				9B331431AFD847BA82C4F08A /* TT Hoves Pro Trial Black.ttf */,
+				BF49AF0A53384A698ED8E578 /* TT Hoves Pro Trial Bold Italic.ttf */,
+				93A5E15CFE974FD1878BF89E /* TT Hoves Pro Trial Bold.ttf */,
+				CA04A579578947C5956F2857 /* TT Hoves Pro Trial Condensed Black Italic.ttf */,
+				F928B1DB260B45ADAD1FD596 /* TT Hoves Pro Trial Condensed Black.ttf */,
+				8A4E2F76938B49C09CE8B4B7 /* TT Hoves Pro Trial Condensed Bold Italic.ttf */,
+				B166F2BBC37B4AF9A25BF5AF /* TT Hoves Pro Trial Condensed Bold.ttf */,
+				A0E99EDF794844F8A0AC3EF5 /* TT Hoves Pro Trial Condensed DemiBold Italic.ttf */,
+				D099144A9A97416E853A923B /* TT Hoves Pro Trial Condensed DemiBold.ttf */,
+				E7C1FFCB1C7F48BDA7176195 /* TT Hoves Pro Trial Condensed ExtraBold Italic.ttf */,
+				F45AD2F028F84CAEB5AD822B /* TT Hoves Pro Trial Condensed ExtraBold.ttf */,
+				1DB202D64F304482A1F674C4 /* TT Hoves Pro Trial Condensed ExtraLight Italic.ttf */,
+				876EF4C6604E439C9C585B93 /* TT Hoves Pro Trial Condensed ExtraLight.ttf */,
+				E2B83D9F30244306887BBA28 /* TT Hoves Pro Trial Condensed Hairline Italic.ttf */,
+				7AA31E6C9A30404CAF48BDFE /* TT Hoves Pro Trial Condensed Hairline.ttf */,
+				F09B446CC4024F908C3F965A /* TT Hoves Pro Trial Condensed Italic.ttf */,
+				7D2EE1633053491A83EED30F /* TT Hoves Pro Trial Condensed Light Italic.ttf */,
+				1FD4B18599F64411925BB528 /* TT Hoves Pro Trial Condensed Light.ttf */,
+				D59753970EF8478CBD01D7D2 /* TT Hoves Pro Trial Condensed Medium Italic.ttf */,
+				EC4F85F1436E459E9C06381D /* TT Hoves Pro Trial Condensed Medium.ttf */,
+				CDBEA4A609DE457287233CB3 /* TT Hoves Pro Trial Condensed Regular.ttf */,
+				D1D15C8AE15245899BEEB138 /* TT Hoves Pro Trial Condensed Thin Italic.ttf */,
+				D5DF65A32D6E442189C89A5A /* TT Hoves Pro Trial Condensed Thin.ttf */,
+				55F71755454F40C38C384F3A /* TT Hoves Pro Trial DemiBold Italic.ttf */,
+				73919EE926884053A0629250 /* TT Hoves Pro Trial DemiBold.ttf */,
+				2F7B4BF618984C1F86C036D2 /* TT Hoves Pro Trial Expanded Black Italic.ttf */,
+				4D100AEB11A44C42B26D5D13 /* TT Hoves Pro Trial Expanded Black.ttf */,
+				FD9D12D624184358B0FA56A4 /* TT Hoves Pro Trial Expanded Bold Italic.ttf */,
+				ABD66ED94CD545AA9BD42E39 /* TT Hoves Pro Trial Expanded Bold.ttf */,
+				8AD7ECB7178143DA8478C786 /* TT Hoves Pro Trial Expanded DemiBold Italic.ttf */,
+				D6985971441C4226AFDA60D5 /* TT Hoves Pro Trial Expanded DemiBold.ttf */,
+				8C1D516EB49D44BE957A36A0 /* TT Hoves Pro Trial Expanded ExtraBold Italic.ttf */,
+				B4793BF76A6E462498A944D9 /* TT Hoves Pro Trial Expanded ExtraBold.ttf */,
+				6E430AC3E3C14E8C8C5EEE4E /* TT Hoves Pro Trial Expanded ExtraLight Italic.ttf */,
+				D0C2C506222D4291AC70FA93 /* TT Hoves Pro Trial Expanded ExtraLight.ttf */,
+				4C864B989DC54712842F83FA /* TT Hoves Pro Trial Expanded Hairline Italic.ttf */,
+				C14CC6A8558E48C1857729E0 /* TT Hoves Pro Trial Expanded Hairline.ttf */,
+				BA863206AD464AE8B53D0512 /* TT Hoves Pro Trial Expanded Italic.ttf */,
+				396B250DEC4E41EA8A5D0AC2 /* TT Hoves Pro Trial Expanded Light Italic.ttf */,
+				DC6F39AAA22840E7A7BAC5B5 /* TT Hoves Pro Trial Expanded Light.ttf */,
+				C0F26E9C9F2A46E7B119C7BC /* TT Hoves Pro Trial Expanded Medium Italic.ttf */,
+				135BD2E2D2CB4565A68D84DD /* TT Hoves Pro Trial Expanded Medium.ttf */,
+				EC80690955BE4D8E8C919331 /* TT Hoves Pro Trial Expanded Regular.ttf */,
+				0A1AB801118C46DDA76ACD7B /* TT Hoves Pro Trial Expanded Thin Italic.ttf */,
+				FC295D2C2D0C4309AA3A638E /* TT Hoves Pro Trial Expanded Thin.ttf */,
+				78F187EEB52E4823A125EC5B /* TT Hoves Pro Trial ExtraBold Italic.ttf */,
+				1E6AE35D1D2F4EED9CD4151D /* TT Hoves Pro Trial ExtraBold.ttf */,
+				67C9B9BF9BB2442CB2BA28C9 /* TT Hoves Pro Trial ExtraLight Italic.ttf */,
+				C584B26F963C4B17BF3661E5 /* TT Hoves Pro Trial ExtraLight.ttf */,
+				2FD561DCC4FA45A0A566BEA1 /* TT Hoves Pro Trial Hairline Italic.ttf */,
+				14AF304DEC554B21AA5BBEAF /* TT Hoves Pro Trial Hairline.ttf */,
+				D3F2AE0FBF254E138955A648 /* TT Hoves Pro Trial Italic.ttf */,
+				C53714EFBAA0407BA3F14CF9 /* TT Hoves Pro Trial Light Italic.ttf */,
+				1B95F3FEF46645078E4134E9 /* TT Hoves Pro Trial Light.ttf */,
+				2E7D85AEB7504B6DB15745C7 /* TT Hoves Pro Trial Medium Italic.ttf */,
+				E0D4334E34D74D17A418CCC7 /* TT Hoves Pro Trial Medium.ttf */,
+				1BAA42595EFD4FB8B63814D6 /* TT Hoves Pro Trial Regular.ttf */,
+				F8C5EDAD834A46D28CDEE17B /* TT Hoves Pro Trial Thin Italic.ttf */,
+				885C7E95C85B42C48B6C5D20 /* TT Hoves Pro Trial Thin.ttf */,
+				BA87C5621B2343E2894D7176 /* TT Hoves Pro Trial Variable.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* ElewaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ElewaTests" */;
+			buildPhases = (
+				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
+				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = ElewaTests;
+			productName = ElewaTests;
+			productReference = 00E356EE1AD99517003FC87E /* ElewaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* Elewa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Elewa" */;
+			buildPhases = (
+				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
+				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Elewa;
+			productName = Elewa;
+			productReference = 13B07F961A680F5B00A75B9A /* Elewa.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1120;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Elewa" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* Elewa */,
+				00E356ED1AD99517003FC87E /* ElewaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				A95843722FA643E0A1D48DD1 /* TT Hoves Pro Bold Outline Trial Italic.ttf in Resources */,
+				C772A29E42D14BCDB42D765D /* TT Hoves Pro Bold Outline Trial.ttf in Resources */,
+				BCFB6F563C544315A3526315 /* TT Hoves Pro Trial Black Italic.ttf in Resources */,
+				6B5BADB14D98409C8F1D0A21 /* TT Hoves Pro Trial Black.ttf in Resources */,
+				F365C8DABA5E4BA09D042F74 /* TT Hoves Pro Trial Bold Italic.ttf in Resources */,
+				2E4DC1DC2826494DB0301AA8 /* TT Hoves Pro Trial Bold.ttf in Resources */,
+				4F807BC00DFB4C5C96C517FB /* TT Hoves Pro Trial Condensed Black Italic.ttf in Resources */,
+				E97EFE31B7EF4A9AB5FCC63C /* TT Hoves Pro Trial Condensed Black.ttf in Resources */,
+				6F33232D7B0844A4A18AABA0 /* TT Hoves Pro Trial Condensed Bold Italic.ttf in Resources */,
+				1CC1F487D2B549278CEB231E /* TT Hoves Pro Trial Condensed Bold.ttf in Resources */,
+				A093CDE5791E400EB60F5454 /* TT Hoves Pro Trial Condensed DemiBold Italic.ttf in Resources */,
+				E4442477A9074C8F9CAE02B5 /* TT Hoves Pro Trial Condensed DemiBold.ttf in Resources */,
+				A9F140B01EA344F4B8B40980 /* TT Hoves Pro Trial Condensed ExtraBold Italic.ttf in Resources */,
+				F706F7738E30416EA8D7A76A /* TT Hoves Pro Trial Condensed ExtraBold.ttf in Resources */,
+				725C3266BDA4456DBD91D8C1 /* TT Hoves Pro Trial Condensed ExtraLight Italic.ttf in Resources */,
+				9F6D5369D3814BFEB7BD19D5 /* TT Hoves Pro Trial Condensed ExtraLight.ttf in Resources */,
+				FFFB9FBB3CC44B778F875B48 /* TT Hoves Pro Trial Condensed Hairline Italic.ttf in Resources */,
+				E7A8B73560DB43CCB1538E0C /* TT Hoves Pro Trial Condensed Hairline.ttf in Resources */,
+				DEADBB79BE134971B4891C5F /* TT Hoves Pro Trial Condensed Italic.ttf in Resources */,
+				2F80391ED2184F979C78E144 /* TT Hoves Pro Trial Condensed Light Italic.ttf in Resources */,
+				2C5F8C80EAFE41A2AF9FC95C /* TT Hoves Pro Trial Condensed Light.ttf in Resources */,
+				B398D9B355504D26800689FC /* TT Hoves Pro Trial Condensed Medium Italic.ttf in Resources */,
+				16BDB18994EB4765A25F4E71 /* TT Hoves Pro Trial Condensed Medium.ttf in Resources */,
+				604E83B4B4254302994B25A1 /* TT Hoves Pro Trial Condensed Regular.ttf in Resources */,
+				F261A89E6451404E8AD213AE /* TT Hoves Pro Trial Condensed Thin Italic.ttf in Resources */,
+				9A36F07F529F40D1A124E29E /* TT Hoves Pro Trial Condensed Thin.ttf in Resources */,
+				823D5A57AB094B80A71ACF4A /* TT Hoves Pro Trial DemiBold Italic.ttf in Resources */,
+				59E65B6035CA445496085059 /* TT Hoves Pro Trial DemiBold.ttf in Resources */,
+				3746CD9B19254516A66FC6F9 /* TT Hoves Pro Trial Expanded Black Italic.ttf in Resources */,
+				AFBDE9A294F548B6BB137ACA /* TT Hoves Pro Trial Expanded Black.ttf in Resources */,
+				4B1A4221ECAE4A9CBD8BA183 /* TT Hoves Pro Trial Expanded Bold Italic.ttf in Resources */,
+				BF850125DF944789AB36D9A8 /* TT Hoves Pro Trial Expanded Bold.ttf in Resources */,
+				A6F9FE690E894A2381E3CFB9 /* TT Hoves Pro Trial Expanded DemiBold Italic.ttf in Resources */,
+				AEE6DDD485BC4DDAAB4F5F81 /* TT Hoves Pro Trial Expanded DemiBold.ttf in Resources */,
+				2899E946850E4F0DB465032D /* TT Hoves Pro Trial Expanded ExtraBold Italic.ttf in Resources */,
+				832266861D874371A31E347E /* TT Hoves Pro Trial Expanded ExtraBold.ttf in Resources */,
+				AAE207E035E84E4AAEFE21C3 /* TT Hoves Pro Trial Expanded ExtraLight Italic.ttf in Resources */,
+				9004115E9EF34942BC1B057B /* TT Hoves Pro Trial Expanded ExtraLight.ttf in Resources */,
+				B4B28E34F98D413892BE5874 /* TT Hoves Pro Trial Expanded Hairline Italic.ttf in Resources */,
+				682E77A8B8B046D9B646FC36 /* TT Hoves Pro Trial Expanded Hairline.ttf in Resources */,
+				39BCEFFFA62047F589CCE290 /* TT Hoves Pro Trial Expanded Italic.ttf in Resources */,
+				8D99C2409D404D4B9F232311 /* TT Hoves Pro Trial Expanded Light Italic.ttf in Resources */,
+				639F2C63EC304E23B288F404 /* TT Hoves Pro Trial Expanded Light.ttf in Resources */,
+				3C5B9DFEA0094AECB058E069 /* TT Hoves Pro Trial Expanded Medium Italic.ttf in Resources */,
+				89DF3615696B41DEA2E6877F /* TT Hoves Pro Trial Expanded Medium.ttf in Resources */,
+				BD9214944C0D4BBABA994E51 /* TT Hoves Pro Trial Expanded Regular.ttf in Resources */,
+				56344310549E426EBD86B058 /* TT Hoves Pro Trial Expanded Thin Italic.ttf in Resources */,
+				27C034D6F09A4346BD3BE112 /* TT Hoves Pro Trial Expanded Thin.ttf in Resources */,
+				5F0C3E7868FC4CF2BBACAC1A /* TT Hoves Pro Trial ExtraBold Italic.ttf in Resources */,
+				D2D7E10828584651A91990B2 /* TT Hoves Pro Trial ExtraBold.ttf in Resources */,
+				CF4D48F961BD41A99B2217BE /* TT Hoves Pro Trial ExtraLight Italic.ttf in Resources */,
+				5A51B5332BFD4947A77D07F2 /* TT Hoves Pro Trial ExtraLight.ttf in Resources */,
+				330E6A107AA149F9852B7A87 /* TT Hoves Pro Trial Hairline Italic.ttf in Resources */,
+				148B517E8DEE40F8931E3ECA /* TT Hoves Pro Trial Hairline.ttf in Resources */,
+				35AFE2C1B33C46DBA5CBD347 /* TT Hoves Pro Trial Italic.ttf in Resources */,
+				2C8DE20794244803A49A5986 /* TT Hoves Pro Trial Light Italic.ttf in Resources */,
+				FF7BF8698A1149738F87427D /* TT Hoves Pro Trial Light.ttf in Resources */,
+				CFF070439ADA4D72B5A2AC91 /* TT Hoves Pro Trial Medium Italic.ttf in Resources */,
+				389C4E5E17524AEF930F6E33 /* TT Hoves Pro Trial Medium.ttf in Resources */,
+				8F13818ACB004DEB9860CFEA /* TT Hoves Pro Trial Regular.ttf in Resources */,
+				9F491E88A31E46B496EA3CD4 /* TT Hoves Pro Trial Thin Italic.ttf in Resources */,
+				60FEEB53993E43838F331858 /* TT Hoves Pro Trial Thin.ttf in Resources */,
+				2706F9DBA9524F6ABC40A26D /* TT Hoves Pro Trial Variable.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+		};
+		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elewa/Pods-Elewa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elewa/Pods-Elewa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Elewa/Pods-Elewa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Elewa-ElewaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Elewa-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elewa-ElewaTests/Pods-Elewa-ElewaTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elewa-ElewaTests/Pods-Elewa-ElewaTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Elewa-ElewaTests/Pods-Elewa-ElewaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elewa/Pods-Elewa-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elewa/Pods-Elewa-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Elewa/Pods-Elewa-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elewa-ElewaTests/Pods-Elewa-ElewaTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elewa-ElewaTests/Pods-Elewa-ElewaTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Elewa-ElewaTests/Pods-Elewa-ElewaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* ElewaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* Elewa */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-Elewa-ElewaTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ElewaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elewa.app/Elewa";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-Elewa-ElewaTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = ElewaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Elewa.app/Elewa";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-Elewa.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = Elewa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Elewa;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-Elewa.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Elewa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = Elewa;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DFOLLY_NO_CONFIG",
+					"-DFOLLY_MOBILE=1",
+					"-DFOLLY_USE_LIBCPP=1",
+				);
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DFOLLY_NO_CONFIG",
+					"-DFOLLY_MOBILE=1",
+					"-DFOLLY_USE_LIBCPP=1",
+				);
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ElewaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Elewa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Elewa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}
