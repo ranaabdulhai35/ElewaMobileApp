@@ -1,5 +1,5 @@
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from '../../Components/Common/header';
 import {COLORS, FONTS} from '../../BusinessLogics/Constants';
 import * as SVGS from '../../Ui/Assets/Svgs/index';
@@ -14,9 +14,37 @@ import {GeneralStyles} from '../../Components/Global/generalStyles';
 import {styles} from '../FindWork/jobCard';
 import CustomButton from '../../Components/Common/customButton';
 import {FontFamily} from '../../Components/Global/generalFonts';
+import httpRequest from '../../BusinessLogics/Requests/axios';
 
-const JobPost = () => {
+const JobPost = ({route}) => {
+  const {jobDetail} = route.params;
+  const [jobDetails, setJobDetail] = useState('');
   const navigation = useNavigation();
+  console.log(jobDetails.description);
+  useEffect(() => {
+    jobDetailApi();
+  }, []);
+
+  const jobDetailApi = async () => {
+    try {
+      const response = await httpRequest.get(
+        `/utils/public_job_detail?id=${jobDetail?.item?.id}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      );
+      if (response?.status === 200) {
+        setJobDetail(response?.data?.data);
+      }
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data?.status);
+      }
+    }
+  };
+
   return (
     <>
       <Header
@@ -60,32 +88,38 @@ const JobPost = () => {
               justifyContent: 'space-between',
             }}>
             <Image
-              source={Images.profilePicture}
+              source={{uri: jobDetails?.vendor?.profile_picture?.cdn_link}}
               style={{
                 width: WIDTH_BASE_RATIO(60),
                 height: HEIGHT_BASE_RATIO(65),
+                borderRadius: 50,
+                marginRight: WIDTH_BASE_RATIO(10),
               }}
               resizeMode="cover"
             />
             <View style={{justifyContent: 'space-between'}}>
               <View style={styles.cardHeader}>
-                <Text style={styles.title}>Design and Digitasl...</Text>
+                <Text style={styles.title}>{jobDetails?.job_title}</Text>
                 <TouchableOpacity style={styles.likeButton}>
                   <SVGS.Like />
                 </TouchableOpacity>
               </View>
-              <Text style={styles.company}>Netflix ENT</Text>
+              <Text style={styles.company}>
+                {jobDetails?.vendor?.company_name}
+              </Text>
               <View style={styles.infoContainer}>
                 <View style={styles.newBadgeContainer}>
                   <Text style={styles.newBadge}>New</Text>
                 </View>
                 <View style={styles.infoItem}>
                   <SVGS.PostTime />
-                  <Text style={styles.infoText}>Urgently Hiring</Text>
+                  <Text style={styles.infoText}>{jobDetails?.hiring_type}</Text>
                 </View>
                 <View style={styles.infoItem}>
                   <SVGS.PostLocation />
-                  <Text style={styles.infoText}>Clermont, FL</Text>
+                  <Text style={styles.infoText}>
+                    {jobDetails?.city}, {jobDetails?.country}
+                  </Text>
                 </View>
               </View>
             </View>
@@ -154,16 +188,13 @@ const JobPost = () => {
                 marginTop: HEIGHT_BASE_RATIO(15),
                 letterSpacing: 0.05,
               }}>
-              We’re looking for a Senior Games/Challenge Producer to head up a
-              team for a new reality series filming abroad for 3 weeks this
-              summer. Contract from end of Jan/start of Feb through to June.
-              Please send your CV via email. Careers@netflix.com
+              {jobDetails?.vendor?.about}
             </Text>
           </View>
           <View
             style={{
               ...GeneralStyles.line,
-              width: WIDTH_BASE_RATIO(278),
+              width: WIDTH_BASE_RATIO(300),
               marginTop: HEIGHT_BASE_RATIO(25),
               height: 1,
             }}></View>
@@ -176,7 +207,10 @@ const JobPost = () => {
               }}>
               About the company
             </Text>
-            <TouchableOpacity onPress={()=>{navigation.navigate('CompannyProfile')}}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('CompannyProfile');
+              }}>
               <View
                 style={{
                   flexDirection: 'row',
@@ -190,10 +224,14 @@ const JobPost = () => {
                     alignItems: 'center',
                   }}>
                   <Image
-                    source={Images.profilePicture}
+                    source={{
+                      uri: jobDetails?.vendor?.profile_picture?.cdn_link,
+                    }}
                     style={{
                       width: WIDTH_BASE_RATIO(60),
                       height: HEIGHT_BASE_RATIO(65),
+                      borderRadius: 50,
+                      marginRight: WIDTH_BASE_RATIO(10),
                     }}
                     resizeMode="cover"
                   />
@@ -209,7 +247,7 @@ const JobPost = () => {
                         color: COLORS.BLACK,
                         letterSpacing: 0.09,
                       }}>
-                      Netflix ENT
+                      {jobDetails?.vendor?.company_name}
                     </Text>
                     <View
                       style={[
@@ -217,7 +255,9 @@ const JobPost = () => {
                         {marginLeft: 0, marginTop: HEIGHT_BASE_RATIO(8)},
                       ]}>
                       <SVGS.PostLocation />
-                      <Text style={[styles.infoText]}>Clermont, FL</Text>
+                      <Text style={[styles.infoText]}>
+                        {jobDetails?.city}, {jobDetails?.country}
+                      </Text>
                     </View>
                   </View>
                 </View>
@@ -253,10 +293,7 @@ const JobPost = () => {
                 marginTop: HEIGHT_BASE_RATIO(15),
                 letterSpacing: 0.05,
               }}>
-              We’re looking for a Senior Games/Challenge Producer to head up a
-              team for a new reality series filming abroad for 3 weeks this
-              summer. Contract from end of Jan/start of Feb through to June.
-              Please send your CV via email. Careers@netflix.com
+              {jobDetails?.description}
             </Text>
           </View>
         </View>

@@ -14,7 +14,6 @@ export const GeneralStyles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     marginTop: HEIGHT_BASE_RATIO(30),
-
   },
   errorStyle: {
     flexDirection: 'row',

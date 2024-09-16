@@ -92,10 +92,8 @@ const FinndWork = () => {
             <FilterButton filterData={filterData} />
           </View>
           <Filter />
-          <View style={{marginTop: HEIGHT_BASE_RATIO(25)}}>
-            {posts.map(() => {
-              return <JobCard />;
-            })}
+          <View style={{marginTop: HEIGHT_BASE_RATIO(25), flex: 1}}>
+            <JobCard />
           </View>
         </ScrollView>
       </View>
