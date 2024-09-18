@@ -53,6 +53,7 @@ const CustomInputTitle = ({
   paddingTop,
   numberOfLines,
   SVGright,
+  onSubmitEditing,
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const togglePasswordVisibility = () => {
@@ -141,7 +142,7 @@ const CustomInputTitle = ({
           inputMode={mode}
           returnKeyLabel={returnKeyLabel}
           returnKeyType={returnKeyType ? returnKeyType : 'done'}
-          onSubmitEditing={onEnter}
+          onSubmitEditing={onSubmitEditing}
           multiline={multiline}
           numberOfLines={numberOfLines ? numberOfLines : 3}
           onChangeText={onChangeText}

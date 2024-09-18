@@ -1,5 +1,5 @@
 import {View, Text, Pressable, ScrollView} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {COLORS} from '../../BusinessLogics/Constants';
 import * as SVGS from '../../Ui/Assets/Svgs';
 import {
@@ -16,7 +16,8 @@ import {useNavigation} from '@react-navigation/native';
 
 const FinndWork = () => {
   const navigation = useNavigation();
-
+  const [searchText, setSearchText] = useState('');
+  const [submitText, setSubmitText] = useState(false);
   const filterData = [
     {
       id: '1',
@@ -62,6 +63,7 @@ const FinndWork = () => {
     },
   ];
   const posts = [1, 2, 3, 4];
+
   return (
     <>
       <View style={[GeneralStyles.container, GeneralStyles.generalPadding]}>
@@ -74,28 +76,33 @@ const FinndWork = () => {
               marginTop: HEIGHT_BASE_RATIO(25),
             }}>
             <CustomInputTitle
+              SVG={SVGS.SearchIcon}
               placeholder={'Design and Digital Marketing Specialist'}
               height={HEIGHT_BASE_RATIO(48)}
               returnKeyType={'done'}
               borderColor={COLORS.BORDER}
               placeholderColor={COLORS.GRAY_3}
-              width={WIDTH_BASE_RATIO(316)}
-              noIcon={true}
+              width={WIDTH_BASE_RATIO(350)}
               borderRadius={36}
               borderWidth={1.5}
+              onChangeText={text => {
+                setSearchText(text);
+                setSubmitText(false);
+              }}
+              onSubmitEditing={() => {
+                setSubmitText(true);
+              }}
             />
-            <Pressable>
+            {/* <Pressable>
               <SVGS.filterBars />
-            </Pressable>
+            </Pressable> */}
           </View>
-          <View style={{marginTop: HEIGHT_BASE_RATIO(20)}}>
+          {/* <View style={{marginTop: HEIGHT_BASE_RATIO(20)}}>
             <FilterButton filterData={filterData} />
-          </View>
-          <Filter />
-          <View style={{marginTop: HEIGHT_BASE_RATIO(25)}}>
-            {posts.map(() => {
-              return <JobCard />;
-            })}
+          </View> */}
+          {/* <Filter /> */}
+          <View style={{marginTop: HEIGHT_BASE_RATIO(25), flex: 1}}>
+            <JobCard searchText={searchText} submitText={submitText} />
           </View>
         </ScrollView>
       </View>

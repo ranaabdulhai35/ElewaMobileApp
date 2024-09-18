@@ -1,5 +1,5 @@
-import {View, Text, TouchableOpacity, ScrollView} from 'react-native';
-import React from 'react';
+import {View, Text, TouchableOpacity, ScrollView, FlatList} from 'react-native';
+import React, {useEffect, useState} from 'react';
 import Header from '../../Components/Common/header';
 import {COLORS, FONTS} from '../../BusinessLogics/Constants';
 import * as SVGS from '../../Ui/Assets/Svgs';
@@ -11,9 +11,111 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import {GeneralStyles} from '../../Components/Global/generalStyles';
 import {FontFamily} from '../../Components/Global/generalFonts';
-
+import httpRequest from '../../BusinessLogics/Requests/axios';
+import {useSelector} from 'react-redux';
+import {styles} from './Styles/styles';
 const TransactionHistory = () => {
   const navigation = useNavigation();
+  const token = useSelector(state => state.auth.token);
+  const [transactionDetail, setTransactionDetail] = useState('');
+
+  useEffect(() => {
+    transactionApi();
+  }, []);
+
+  const transactionApi = async () => {
+    try {
+      const response = await httpRequest.get(`/payment/transaction_history`, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `${token}`,
+        },
+      });
+      if (response?.status === 200) {
+        console.log('response.data', response.data);
+        setTransactionDetail(response?.data?.data);
+      }
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data);
+      }
+    }
+  };
+
+  const renderTransactionList = () => {
+    return (
+      <View>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+          <Text
+            style={{
+              ...FONTS.TTNormal_14_Black,
+              color: COLORS.Gray,
+              fontFamily: FontFamily.Bold,
+            }}>
+            Dec 28, 2018
+          </Text>
+          <Text
+            style={{
+              ...FONTS.TTNormal_14_Black,
+              color: COLORS.PRIMARY,
+              fontFamily: FontFamily.Medium,
+              borderBottomColor: COLORS.PRIMARY,
+              borderBottomWidth: 1,
+            }}>
+            View invoice
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginTop: HEIGHT_BASE_RATIO(12.5),
+          }}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <View
+              style={{
+                width: WIDTH_BASE_RATIO(50),
+                height: HEIGHT_BASE_RATIO(52),
+                backgroundColor: COLORS.ADD_BTN_BG,
+                borderRadius: 25,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <SVGS.MoneyReceive />
+            </View>
+            <View style={{marginLeft: WIDTH_BASE_RATIO(12)}}>
+              <Text
+                style={{
+                  ...FONTS.TTNormal_14_Black,
+                  fontFamily: FontFamily.Bold,
+                }}>
+                PSAE
+              </Text>
+              <Text
+                style={{
+                  ...FONTS.TTNormal_14_Black,
+                }}>
+                Service Fee
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={{
+              ...FONTS.TTNormal_14_Black,
+              fontFamily: FontFamily.Bold,
+            }}>
+            $48.00
+          </Text>
+        </View>
+      </View>
+    );
+  };
 
   return (
     <>
@@ -95,219 +197,24 @@ const TransactionHistory = () => {
             <SVGS.ArrowBottomBlack />
           </TouchableOpacity>
         </View>
+
+        {transactionDetail.length === 0 && (
+          <View style={styles.viewPosition}>
+            <Text
+              style={{
+                ...FONTS.TTMedium_18_Black,
+                fontFamily: FontFamily.Bold,
+              }}>
+              No Transactions found
+            </Text>
+          </View>
+        )}
+
         <ScrollView style={{marginTop: HEIGHT_BASE_RATIO(30)}}>
-          <View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}>
-              <Text
-                style={{
-                  ...FONTS.TTNormal_14_Black,
-                  color: COLORS.Gray,
-                  fontFamily: FontFamily.Bold,
-                }}>
-                Dec 28, 2018
-              </Text>
-              <Text
-                style={{
-                  ...FONTS.TTNormal_14_Black,
-                  color: COLORS.PRIMARY,
-                  fontFamily: FontFamily.Medium,
-                  borderBottomColor: COLORS.PRIMARY,
-                  borderBottomWidth: 1,
-                }}>
-                View invoice
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginTop: HEIGHT_BASE_RATIO(12.5),
-              }}>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <View
-                  style={{
-                    width: WIDTH_BASE_RATIO(50),
-                    height: HEIGHT_BASE_RATIO(52),
-                    backgroundColor: COLORS.ADD_BTN_BG,
-                    borderRadius: 25,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}>
-                  <SVGS.MoneyReceive />
-                </View>
-                <View style={{marginLeft: WIDTH_BASE_RATIO(12)}}>
-                  <Text
-                    style={{
-                      ...FONTS.TTNormal_14_Black,
-                      fontFamily: FontFamily.Bold,
-                    }}>
-                    PSAE
-                  </Text>
-                  <Text
-                    style={{
-                      ...FONTS.TTNormal_14_Black,
-                    }}>
-                    Service Fee
-                  </Text>
-                </View>
-              </View>
-              <Text
-                style={{
-                  ...FONTS.TTNormal_14_Black,
-                  fontFamily: FontFamily.Bold,
-                }}>
-                $48.00
-              </Text>
-            </View>
-          </View>
-          <View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginTop:HEIGHT_BASE_RATIO(20)
-              }}>
-              <Text
-                style={{
-                  ...FONTS.TTNormal_14_Black,
-                  color: COLORS.Gray,
-                  fontFamily: FontFamily.Bold,
-                }}>
-                Dec 28, 2018
-              </Text>
-              <Text
-                style={{
-                  ...FONTS.TTNormal_14_Black,
-                  color: COLORS.PRIMARY,
-                  fontFamily: FontFamily.Medium,
-                  borderBottomColor: COLORS.PRIMARY,
-                  borderBottomWidth: 1,
-                }}>
-                View invoice
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginTop: HEIGHT_BASE_RATIO(12.5),
-              }}>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <View
-                  style={{
-                    width: WIDTH_BASE_RATIO(50),
-                    height: HEIGHT_BASE_RATIO(52),
-                    backgroundColor: COLORS.ADD_BTN_BG,
-                    borderRadius: 25,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}>
-                  <SVGS.MoneyReceive />
-                </View>
-                <View style={{marginLeft: WIDTH_BASE_RATIO(12)}}>
-                  <Text
-                    style={{
-                      ...FONTS.TTNormal_14_Black,
-                      fontFamily: FontFamily.Bold,
-                    }}>
-                    PSAE
-                  </Text>
-                  <Text
-                    style={{
-                      ...FONTS.TTNormal_14_Black,
-                    }}>
-                    Bonus
-                  </Text>
-                </View>
-              </View>
-              <Text
-                style={{
-                  ...FONTS.TTNormal_14_Black,
-                  fontFamily: FontFamily.Bold,
-                }}>
-                $48.00
-              </Text>
-            </View>
-          </View>
-          <View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginTop:HEIGHT_BASE_RATIO(20)
-              }}>
-              <Text
-                style={{
-                  ...FONTS.TTNormal_14_Black,
-                  color: COLORS.Gray,
-                  fontFamily: FontFamily.Bold,
-                }}>
-                Dec 28, 2018
-              </Text>
-              <Text
-                style={{
-                  ...FONTS.TTNormal_14_Black,
-                  color: COLORS.PRIMARY,
-                  fontFamily: FontFamily.Medium,
-                  borderBottomColor: COLORS.PRIMARY,
-                  borderBottomWidth: 1,
-                }}>
-                View invoice
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginTop: HEIGHT_BASE_RATIO(12.5),
-              }}>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <View
-                  style={{
-                    width: WIDTH_BASE_RATIO(50),
-                    height: HEIGHT_BASE_RATIO(52),
-                    backgroundColor: COLORS.ADD_BTN_BG,
-                    borderRadius: 25,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}>
-                  <SVGS.MoneyReceive />
-                </View>
-                <View style={{marginLeft: WIDTH_BASE_RATIO(12)}}>
-                  <Text
-                    style={{
-                      ...FONTS.TTNormal_14_Black,
-                      fontFamily: FontFamily.Bold,
-                    }}>
-                    PSAE
-                  </Text>
-                  <Text
-                    style={{
-                      ...FONTS.TTNormal_14_Black,
-                    }}>
-                    Bonus
-                  </Text>
-                </View>
-              </View>
-              <Text
-                style={{
-                  ...FONTS.TTNormal_14_Black,
-                  fontFamily: FontFamily.Bold,
-                }}>
-                $48.00
-              </Text>
-            </View>
-          </View>
+          <FlatList
+            data={transactionDetail}
+            renderItem={renderTransactionList}
+          />
         </ScrollView>
       </View>
     </>

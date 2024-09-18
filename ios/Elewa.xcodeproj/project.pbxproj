@@ -14,7 +14,6 @@
 		148B517E8DEE40F8931E3ECA /* TT Hoves Pro Trial Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14AF304DEC554B21AA5BBEAF /* TT Hoves Pro Trial Hairline.ttf */; };
 		16BDB18994EB4765A25F4E71 /* TT Hoves Pro Trial Condensed Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC4F85F1436E459E9C06381D /* TT Hoves Pro Trial Condensed Medium.ttf */; };
 		1CC1F487D2B549278CEB231E /* TT Hoves Pro Trial Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B166F2BBC37B4AF9A25BF5AF /* TT Hoves Pro Trial Condensed Bold.ttf */; };
-		1F3684761FFF17938C6847B7 /* libPods-Elewa-ElewaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 996645EAE532951137D16EDD /* libPods-Elewa-ElewaTests.a */; };
 		2706F9DBA9524F6ABC40A26D /* TT Hoves Pro Trial Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA87C5621B2343E2894D7176 /* TT Hoves Pro Trial Variable.ttf */; };
 		27C034D6F09A4346BD3BE112 /* TT Hoves Pro Trial Expanded Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC295D2C2D0C4309AA3A638E /* TT Hoves Pro Trial Expanded Thin.ttf */; };
 		2899E946850E4F0DB465032D /* TT Hoves Pro Trial Expanded ExtraBold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C1D516EB49D44BE957A36A0 /* TT Hoves Pro Trial Expanded ExtraBold Italic.ttf */; };
@@ -57,6 +56,7 @@
 		A95843722FA643E0A1D48DD1 /* TT Hoves Pro Bold Outline Trial Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E56C6D2FA2C8404C869A2CD0 /* TT Hoves Pro Bold Outline Trial Italic.ttf */; };
 		A9F140B01EA344F4B8B40980 /* TT Hoves Pro Trial Condensed ExtraBold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7C1FFCB1C7F48BDA7176195 /* TT Hoves Pro Trial Condensed ExtraBold Italic.ttf */; };
 		AAE207E035E84E4AAEFE21C3 /* TT Hoves Pro Trial Expanded ExtraLight Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E430AC3E3C14E8C8C5EEE4E /* TT Hoves Pro Trial Expanded ExtraLight Italic.ttf */; };
+		AC67BEAC5A18FF54B762DB8A /* libPods-Elewa-ElewaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 996645EAE532951137D16EDD /* libPods-Elewa-ElewaTests.a */; };
 		AEE6DDD485BC4DDAAB4F5F81 /* TT Hoves Pro Trial Expanded DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6985971441C4226AFDA60D5 /* TT Hoves Pro Trial Expanded DemiBold.ttf */; };
 		AFBDE9A294F548B6BB137ACA /* TT Hoves Pro Trial Expanded Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D100AEB11A44C42B26D5D13 /* TT Hoves Pro Trial Expanded Black.ttf */; };
 		B398D9B355504D26800689FC /* TT Hoves Pro Trial Condensed Medium Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D59753970EF8478CBD01D7D2 /* TT Hoves Pro Trial Condensed Medium Italic.ttf */; };
@@ -177,7 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F3684761FFF17938C6847B7 /* libPods-Elewa-ElewaTests.a in Frameworks */,
+				AC67BEAC5A18FF54B762DB8A /* libPods-Elewa-ElewaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +747,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQYB6G275V;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Elewa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -774,6 +775,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQYB6G275V;
 				INFOPLIST_FILE = Elewa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

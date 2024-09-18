@@ -5,7 +5,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {COLORS, FONTS} from '../../BusinessLogics/Constants';
 import * as SVGS from '../../Ui/Assets/Svgs';
 import {
@@ -23,10 +23,10 @@ import {useNavigation} from '@react-navigation/native';
 import {FontFamily} from '../../Components/Global/generalFonts';
 import CustomButton from '../../Components/Common/customButton';
 import Offers from './Components/offers';
-
+import {useSelector} from 'react-redux';
+import httpRequest from '../../BusinessLogics/Requests/axios';
 const Jobs = () => {
   const navigation = useNavigation();
-
   const [selectedTab, steSelectedTab] = useState('Applied');
   const handleSelectedTab = data => {
     steSelectedTab(data);
@@ -70,14 +70,8 @@ const Jobs = () => {
               marginTop: HEIGHT_BASE_RATIO(35),
               paddingBottom: HEIGHT_BASE_RATIO(20),
             }}>
-            {selectedTab === 'Applied' &&
-              posts.map(() => {
-                return <JobCard />;
-              })}
-            {selectedTab === 'Invitation' &&
-              posts.map(() => {
-                return <JobCard />;
-              })}
+            {selectedTab === 'Applied' && <JobCard />}
+            {selectedTab === 'Invitation' && <JobCard />}
             {selectedTab === 'Offers' && <Offers />}
           </View>
         </ScrollView>
