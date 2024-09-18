@@ -15,12 +15,14 @@ import {styles} from '../FindWork/jobCard';
 import CustomButton from '../../Components/Common/customButton';
 import {FontFamily} from '../../Components/Global/generalFonts';
 import httpRequest from '../../BusinessLogics/Requests/axios';
+import {useSelector} from 'react-redux';
 
 const JobPost = ({route}) => {
   const {jobDetail} = route.params;
   const [jobDetails, setJobDetail] = useState('');
   const navigation = useNavigation();
-  console.log(jobDetails.description);
+  const state = useSelector(state => state.auth);
+
   useEffect(() => {
     jobDetailApi();
   }, []);
@@ -41,6 +43,28 @@ const JobPost = ({route}) => {
     } catch (error) {
       if (error.response) {
         console.log(error.response.data?.status);
+      }
+    }
+  };
+
+  const applyJob = async () => {
+    try {
+      const data = JSON.stringify({
+        job: jobDetails?.id,
+        cover_letter: '',
+      });
+      const response = await httpRequest.post('/vendor/apply_job', data, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `${state.token}`,
+        },
+      });
+      if (response.status === 200) {
+        console.log('response data', response.data);
+      }
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data);
       }
     }
   };
@@ -142,7 +166,8 @@ const JobPost = ({route}) => {
               //     navigation.navigate('ProfessionInfo');
               //   }}
               marginTop={HEIGHT_BASE_RATIO(20)}
-              text={'Accept'}
+              onPress={() => applyJob()}
+              text={'Apply Job'}
               textStyle={{
                 ...FONTS.ButtonText,
                 color: COLORS.WHITE,

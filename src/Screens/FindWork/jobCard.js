@@ -19,29 +19,34 @@ import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import httpRequest from '../../BusinessLogics/Requests/axios';
 import moment from 'moment';
-const JobCard = () => {
+const JobCard = ({searchText, submitText}) => {
   const navigation = useNavigation();
   const [jobs, setJobs] = useState('');
   const [Page, setPage] = useState(1);
   const [load, setLoad] = useState(true);
-  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [isLoadingMore, setIsLoadingMore] = useState(true);
 
   useEffect(() => {
-    jobsApi(1);
-  }, []);
+    setPage(1);
+    setJobs([]);
+    jobsApi(1, searchText);
+    setIsLoadingMore(true);
+  }, [submitText]);
 
   const loadMore = async () => {
     if (load === true) {
       setIsLoadingMore(true);
       setPage(prevPage => prevPage + 1);
-      jobsApi(Page + 1);
+      jobsApi(Page + 1, searchText);
     }
   };
 
-  const jobsApi = async currentPage => {
+  const jobsApi = async (currentPage, searchText) => {
     try {
       const response = await httpRequest.get(
-        `/utils/public_job_list?page=${currentPage}`,
+        submitText
+          ? `/utils/public_job_list?page=${currentPage}&search=${searchText}`
+          : `/utils/public_job_list?page=${currentPage}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -50,9 +55,9 @@ const JobCard = () => {
       );
       if (response?.status === 200) {
         const newJobs = response?.data?.data?.data;
-        console.log('newJobs.length', newJobs.length);
-        if (!newJobs || newJobs.length === 0) {
+        if (!newJobs || newJobs.length === 0 || newJobs === undefined) {
           setLoad(false);
+          setJobs([]);
         } else {
           setJobs(prevJobs => [...prevJobs, ...newJobs]);
         }
@@ -60,8 +65,10 @@ const JobCard = () => {
     } catch (error) {
       if (error.response) {
         setLoad(false);
-        console.log(error.response.data?.status);
+        console.log(error.response.data);
       }
+    } finally {
+      setIsLoadingMore(false);
     }
   };
 
@@ -112,7 +119,18 @@ const JobCard = () => {
 
   return (
     <View style={styles.viewPosition}>
-      {jobs?.length === 0 ? (
+      {jobs.length === 0 && !isLoadingMore && (
+        <View style={styles.viewPosition1}>
+          <Text
+            style={{
+              ...FONTS.TTMedium_18_Black,
+              fontFamily: FontFamily.Bold,
+            }}>
+            No Jobs Found
+          </Text>
+        </View>
+      )}
+      {isLoadingMore ? (
         <View style={styles.viewPosition1}>
           <ActivityIndicator size={'small'} />
         </View>
@@ -140,7 +158,8 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.WHITE,
   },
   viewPosition1: {
-    marginTop: HEIGHT_BASE_RATIO(50),
+    marginTop: HEIGHT_BASE_RATIO(80),
+    alignItems: 'center',
   },
   card: {
     borderWidth: 1,
