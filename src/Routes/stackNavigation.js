@@ -11,6 +11,7 @@ import EndContract from '../Screens/EndContract/endContract';
 import { useSelector } from 'react-redux';
 import Login from '../Screens/AuthenticationStack/login/login';
 import AuthNavigation from './authNavigation';
+import EditProfile from '../Screens/EditProfile/editProfile';
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
@@ -33,6 +34,7 @@ const StackNavigation = () => {
         <Stack.Screen name="JobPost" component={JobPost} />
         <Stack.Screen name="Contract" component={Contract} />
         <Stack.Screen name="CompannyProfile" component={CompanyProfile} />
+        <Stack.Screen name="EditProfile" component={EditProfile} />
         <Stack.Screen name="AllContracts" component={AllContracts} />
         <Stack.Screen name="TransactionHistory" component={TransactionHistory} />
         <Stack.Screen name="EndContract" component={EndContract} />

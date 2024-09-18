@@ -38,7 +38,7 @@ const SignUp = () => {
     if (formikRef.current) {
       formikRef.current.handleSubmit();
     }
-  };
+  }; 
   const countryData = async () => {
     var config = {
       method: 'get',

@@ -3205,6 +3205,7 @@ __metadata:
     react-native-dotenv: ^3.4.11
     react-native-element-dropdown: ^2.12.1
     react-native-gesture-handler: ^2.17.1
+    react-native-image-picker: ^7.1.2
     react-native-keyboard-aware-scroll-view: ^0.9.5
     react-native-otp-inputs: ^7.4.0
     react-native-otp-textinput: ^1.1.6
@@ -3212,8 +3213,10 @@ __metadata:
     react-native-reanimated-carousel: ^3.5.1
     react-native-safe-area-context: ^4.10.8
     react-native-screens: ^3.32.0
+    react-native-simple-toast: ^3.3.1
     react-native-svg: 15.0.0
     react-native-svg-transformer: 1.2.0
+    react-native-tag-input: ^0.0.21
     react-native-vector-icons: ^10.1.0
     react-redux: ^9.1.2
     react-test-renderer: 18.2.0
@@ -6101,7 +6104,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"invariant@npm:*, invariant@npm:^2.2.4":
+"invariant@npm:*, invariant@npm:^2.2.2, invariant@npm:^2.2.4":
   version: 2.2.4
   resolution: "invariant@npm:2.2.4"
   dependencies:
@@ -9224,7 +9227,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:*, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:*, prop-types@npm:^15.5.10, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -9431,6 +9434,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-image-picker@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "react-native-image-picker@npm:7.1.2"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: af52328b7cb06c28549442f0d923cfa92dde8d5a968a642336df4c882f81adbf0e5e606a14de27f96883a76fa1e03230061c4080011c9107942edebc8e09c478
+  languageName: node
+  linkType: hard
+
 "react-native-iphone-x-helper@npm:^1.0.3":
   version: 1.3.1
   resolution: "react-native-iphone-x-helper@npm:1.3.1"
@@ -9528,6 +9541,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-simple-toast@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "react-native-simple-toast@npm:3.3.1"
+  peerDependencies:
+    react: "*"
+    react-native: ">=0.71.0"
+  checksum: 0f535a469b9519f761ee0224828df8e531fb92ad5e9accefdc04aafcd896da4c6fead488fe6911ccc11592f325707499f4b696768afd8c20cefe06fa6cdac50f
+  languageName: node
+  linkType: hard
+
 "react-native-svg-transformer@npm:1.2.0":
   version: 1.2.0
   resolution: "react-native-svg-transformer@npm:1.2.0"
@@ -9553,6 +9576,19 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 2359330340b63eaf4f18d7a3e5a89b32efe8c247b03324e907a2c4c7350093bf85c221251146d4dc8820746bdabe6c9e3d92dd5d0c8aef7f730d9e18a3a4f4b6
+  languageName: node
+  linkType: hard
+
+"react-native-tag-input@npm:^0.0.21":
+  version: 0.0.21
+  resolution: "react-native-tag-input@npm:0.0.21"
+  dependencies:
+    invariant: ^2.2.2
+    prop-types: ^15.5.10
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: cd9be83b0ee4838736cc10f7be575578c9f93d608f1347076396defb98d1d419698411610435b7f81cda9ecd36d9cbebd6d1767fc792a58cdbb2d760159a8dbf
   languageName: node
   linkType: hard
 

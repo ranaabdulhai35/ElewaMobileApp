@@ -8,6 +8,7 @@ import {Badge} from 'react-native-paper';
 const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
 
 export const COLORS = {
+  InputHeading: '#252525',
   WHITE: '#FFFFFF',
   BLACK: '#0B0B0B',
   LIGHT_TEXT: '#A0A0A0',
@@ -128,9 +129,19 @@ export const FONTS = {
     fontFamily: FontFamily.ExtraBold,
     color: COLORS.BLACK,
   },
+  TTBold_20_Black: {
+    fontSize: FONT_SIZE(20),
+    fontFamily: FontFamily.Bold,
+    color: COLORS.BLACK,
+  },
   TTMedium_18_Black: {
     fontSize: FONT_SIZE(18),
     fontFamily: FontFamily.Bold,
+    color: COLORS.BLACK,
+  },
+  TTMedium_14_Black: {
+    fontSize: FONT_SIZE(14),
+    fontFamily: FontFamily.Medium,
     color: COLORS.BLACK,
   },
   TTNormal_14_Black: {
@@ -141,6 +152,11 @@ export const FONTS = {
   TTSmall_12_Black: {
     fontSize: FONT_SIZE(12),
     fontFamily: FontFamily.Regular,
+    color: COLORS.BLACK,
+  },
+  TTNormal_12_Black: {
+    fontSize: FONT_SIZE(12),
+    fontFamily: FontFamily.Medium,
     color: COLORS.BLACK,
   },
   Heading: {
