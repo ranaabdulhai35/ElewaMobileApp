@@ -10,9 +10,7 @@ import Star from './star.svg';
 import Link from './Link.svg';
 import Verify from './verify.svg';
 import Location from './location.svg';
-import Instagram from './instagram.svg';
 import Web from './web.svg';
-import Twitter from './twitter.svg';
 import ArrowRight from './ArrowRightWhite.svg';
 import ArrowLeftBlack from './ArrowLeftBlack.svg';
 import ArrowLeftWhite from './ArrowLeftWhite.svg';
@@ -50,6 +48,14 @@ import History from './history.svg';
 import RatingStars from './ratingStars.svg';
 import BottomArrowDark from './bottomArrowDark.svg';
 import MoneyReceive from './moneyReceive.svg';
+import User from './noImage.svg';
+import Upload from './upload.svg';
+import Twitter from './twitter.svg';
+import ProfileMenu from './profileMenu.svg';
+import Youtube from './Youtube.svg';
+import Instagram from './Instagram.svg';
+import Linkedin from './Linkedin.svg';
+import Vimeo from './Vimeo.svg';
 export {
   Google,
   Apple,
@@ -63,9 +69,7 @@ export {
   Link,
   Verify,
   Location,
-  Instagram,
   Web,
-  Twitter,
   ArrowLeftBlack,
   ArrowRight,
   ArrowLeftWhite,
@@ -102,5 +106,13 @@ export {
   History,
   RatingStars,
   BottomArrowDark,
-  MoneyReceive
+  MoneyReceive,
+  User,
+  Upload,
+  ProfileMenu,
+  Twitter,
+  Linkedin,
+  Youtube,
+  Vimeo,
+  Instagram,
 };

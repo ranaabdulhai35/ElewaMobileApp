@@ -22,7 +22,8 @@ import Setting2 from '../Svgs/setting-2.svg';
 import Wallet2 from '../Svgs/wallet-2.svg';
 import WorkShop from '../Svgs/workShop.svg';
 import History from '../Svgs/history.svg';
-import Account from './frame.svg'
+import Account from './frame.svg';
+import User from './noImage.svg';
 
 export {
   Settings,
@@ -49,7 +50,8 @@ export {
   Wallet2,
   WorkShop,
   History,
-  Account
+  Account,
+  User,
 };
 export function findSvg(name) {
   console.log('Searching for:', name);

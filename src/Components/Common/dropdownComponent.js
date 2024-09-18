@@ -10,11 +10,15 @@ const DropdownComponent = ({
   handleState,
   handleValue,
   value,
+  marginTop,
   placeholder,
 }) => {
   return (
     <Dropdown
-      style={styles.dropdown}
+      style={{
+        ...styles.dropdown,
+        marginTop: marginTop ? marginTop : HEIGHT_BASE_RATIO(15),
+      }}
       placeholderStyle={styles.placeholderStyle}
       selectedTextStyle={styles.selectedTextStyle}
       inputSearchStyle={styles.inputSearchStyle}
@@ -45,7 +49,6 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: '#CDCDCD',
     justifyContent: 'center',
-    marginTop: HEIGHT_BASE_RATIO(15),
     paddingHorizontal: 20,
   },
   icon: {

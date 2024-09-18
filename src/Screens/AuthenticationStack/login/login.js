@@ -186,7 +186,6 @@ const Login = () => {
                 elevation: 15,
               }}
               onPress={() => {
-                // navigation.navigate('ProfessionInfo');
                 handleButtonPress();
               }}
               marginTop={HEIGHT_BASE_RATIO(20)}
