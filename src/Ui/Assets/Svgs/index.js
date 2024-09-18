@@ -53,7 +53,7 @@ import Upload from './upload.svg';
 import Twitter from './twitter.svg';
 import ProfileMenu from './profileMenu.svg';
 import Youtube from './Youtube.svg';
-import Instagram from './Instagram.svg';
+import Instagram from './instagram.svg';
 import Linkedin from './Linkedin.svg';
 import Vimeo from './Vimeo.svg';
 export {
