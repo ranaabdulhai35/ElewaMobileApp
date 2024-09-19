@@ -87,7 +87,7 @@ const MessageScreen = ({route}) => {
       const timestamp = formatDate(new Date());
       const messagePayload = {
         action: 'message',
-        roomId,
+        roomId: data?.roomId,
         message: addMessage,
         user: 98,
         timestamp,
@@ -112,8 +112,8 @@ const MessageScreen = ({route}) => {
           paddingHorizontal: WIDTH_BASE_RATIO(15),
           paddingVertical: HEIGHT_BASE_RATIO(18),
           marginTop: HEIGHT_BASE_RATIO(20),
-          marginLeft: WIDTH_BASE_RATIO(45),
           marginVertical: HEIGHT_BASE_RATIO(5),
+          alignSelf: 'flex-end',
         }}>
         <Text
           style={[
