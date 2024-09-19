@@ -163,7 +163,7 @@ const Profile = () => {
   const reviews = [1, 2, 3, 4, 5];
   useEffect(() => {
     getProfile();
-  },[]);
+  }, []);
   return (
     <>
       <ScrollView scrollEnabled={true}>
