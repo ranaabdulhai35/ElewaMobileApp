@@ -35,7 +35,7 @@ const JobCard = ({searchText, submitText}) => {
 
   const loadMore = async () => {
     if (load === true) {
-      setIsLoadingMore(true);
+      // setIsLoadingMore(true);
       setPage(prevPage => prevPage + 1);
       jobsApi(Page + 1, searchText);
     }
