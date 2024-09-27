@@ -102,7 +102,11 @@ const FinndWork = () => {
           </View> */}
           {/* <Filter /> */}
           <View style={{marginTop: HEIGHT_BASE_RATIO(25), flex: 1}}>
-            <JobCard searchText={searchText} submitText={submitText} />
+            <JobCard
+              searchText={searchText}
+              submitText={submitText}
+              jobDetails={null}
+            />
           </View>
         </ScrollView>
       </View>
