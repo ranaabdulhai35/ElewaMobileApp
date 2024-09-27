@@ -14,10 +14,18 @@ import {FontFamily} from '../../Components/Global/generalFonts';
 import httpRequest from '../../BusinessLogics/Requests/axios';
 import {useSelector} from 'react-redux';
 import {styles} from './Styles/styles';
+import CalendarPicker from 'react-native-calendar-picker';
+
 const TransactionHistory = () => {
   const navigation = useNavigation();
   const token = useSelector(state => state.auth.token);
   const [transactionDetail, setTransactionDetail] = useState('');
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  const onDateChange = (date) => {
+    setSelectedDate(date);
+  };
 
   useEffect(() => {
     transactionApi();
@@ -165,36 +173,28 @@ const TransactionHistory = () => {
               borderWidth: 1,
               borderColor: COLORS.BORDER,
               flexDirection: 'row',
+            }}
+            onPress={() => {
+              setShowDatePicker(!showDatePicker);
             }}>
             <Text
               style={{
                 ...FONTS.TTNormal_14_Black,
                 marginRight: WIDTH_BASE_RATIO(25),
               }}>
-              4/31/2013 - 8/20/2023
+              {selectedDate.toLocaleDateString()}
             </Text>
             <SVGS.ArrowBottomBlack />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              width: WIDTH_BASE_RATIO(135),
-              height: HEIGHT_BASE_RATIO(45),
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 6,
-              borderWidth: 1,
-              borderColor: COLORS.BORDER,
-              flexDirection: 'row',
-            }}>
-            <Text
-              style={{
-                ...FONTS.TTNormal_14_Black,
-                marginRight: WIDTH_BASE_RATIO(25),
-              }}>
-              Clients
-            </Text>
-            <SVGS.ArrowBottomBlack />
-          </TouchableOpacity>
+
+          {showDatePicker && (
+            <CalendarPicker
+              onDateChange={onDateChange}
+              selectedDate={selectedDate}
+              minDate={new Date()}
+              maxDate={new Date('2030-01-01')}
+            />
+          )}
         </View>
 
         {transactionDetail.length === 0 && (

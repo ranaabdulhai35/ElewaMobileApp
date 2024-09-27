@@ -21,6 +21,7 @@ import ArrowBottomWhite from './arrowBottomWhite.svg';
 import PostTime from './postTime.svg';
 import PostLocation from './postLocation.svg';
 import Like from './heart.svg';
+import LikeActive from './heartActive.svg';
 import Home from './homeIcon.svg';
 import Profile from './profile.svg';
 import FindWork from './userSearch.svg';
@@ -80,6 +81,7 @@ export {
   PostTime,
   PostLocation,
   Like,
+  LikeActive,
   Home,
   Profile,
   FindWork,

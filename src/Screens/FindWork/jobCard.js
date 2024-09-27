@@ -19,6 +19,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import httpRequest from '../../BusinessLogics/Requests/axios';
 import moment from 'moment';
+import FavouriteAddButton from '../../Components/Common/favouriteAddButton';
 const JobCard = ({searchText, submitText}) => {
   const navigation = useNavigation();
   const [jobs, setJobs] = useState('');
@@ -77,9 +78,11 @@ const JobCard = ({searchText, submitText}) => {
       <View style={styles.card}>
         <View style={styles.cardHeader}>
           <Text style={styles.title}>{data?.item?.job_title}</Text>
-          <TouchableOpacity style={styles.likeButton}>
-            <SVGS.Like />
-          </TouchableOpacity>
+          <FavouriteAddButton
+            id={data?.item?.id}
+            isFavourite={data?.item?.is_favourite}
+            type={'job'}
+          />
         </View>
         <Text style={styles.company}>Netflix ENT</Text>
         <View style={styles.infoContainer}>

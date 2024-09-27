@@ -30,8 +30,7 @@ function MyTabs() {
   const handleColor = color => {
     setColor(color);
   };
-  
-  
+
   return (
     <>
       <Drawer
@@ -168,15 +167,15 @@ function MyTabs() {
                           ? FontFamily.Bold
                           : FontFamily.Regular,
                       }}>
-                      Find work
+                      Find People
                     </Text>
                   </View>
                 </>
               );
             },
           }}
-          name="Find work"
-          component={FinndWork}
+          name="CrewOrVendors"
+          component={Jobs}
         />
         <Tab.Screen
           options={{
@@ -203,15 +202,15 @@ function MyTabs() {
                           ? FontFamily.Bold
                           : FontFamily.Regular,
                       }}>
-                      Jobs
+                      Find work
                     </Text>
                   </View>
                 </>
               );
             },
           }}
-          name="Jobs"
-          component={Jobs}
+          name="Find work"
+          component={FinndWork}
         />
       </Tab.Navigator>
     </>

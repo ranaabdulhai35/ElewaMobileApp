@@ -31,14 +31,16 @@ const Messages = () => {
   const invites = [1, 2, 3, 4];
   const state = useSelector(state => state.auth);
   const [messages, setMessages] = useState([]);
+  const [loader, setLoader] = useState(false);
   const [socket, setSocket] = useState(null);
   useEffect(() => {
     getUserList();
   }, []);
 
   const getUserList = async () => {
+    setLoader(true);
     try {
-      const response = await httpRequest.get(`/chat/users/98/chats`, {
+      const response = await httpRequest.get(`/chat/users/${state.id}/chats`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `${state.token}`,
@@ -51,6 +53,8 @@ const Messages = () => {
       if (error.response) {
         console.log(error.response.data);
       }
+    } finally {
+      setLoader(false);
     }
   };
 
@@ -103,7 +107,7 @@ const Messages = () => {
           GeneralStyles.container,
           {backgroundColor: COLORS.LIGHTEST_GRAY},
         ]}>
-        {messages.length === 0 ? (
+        {loader ? (
           <View style={{marginTop: HEIGHT_BASE_RATIO(200)}}>
             <ActivityIndicator size={'small'} />
           </View>

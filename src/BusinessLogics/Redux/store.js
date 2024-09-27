@@ -77,6 +77,8 @@ export const AuthSlice = createSlice({
     log_out: {
       reducer: (state, action) => {
         state.token = null;
+        state.role = null;
+        state.id = null;
       },
     },
     setToken: {
