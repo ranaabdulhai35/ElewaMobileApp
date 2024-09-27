@@ -19,6 +19,7 @@ import CustomButton from '../../../Components/Common/customButton';
 
 const UserCard = ({data}) => {
   const navigation = useNavigation();
+
   return (
     <View style={styles.userInfoCard}>
       <View

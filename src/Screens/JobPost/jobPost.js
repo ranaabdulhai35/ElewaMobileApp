@@ -40,7 +40,6 @@ const JobPost = ({route}) => {
       );
       if (response?.status === 200) {
         setJobDetail(response?.data?.data);
-        console.log('job details response', response?.data?.data);
       }
     } catch (error) {
       if (error.response) {
@@ -270,7 +269,9 @@ const JobPost = ({route}) => {
             </Text>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('CompannyProfile');
+                navigation.navigate('CompannyProfile', {
+                  jobDetails: jobDetails,
+                });
               }}>
               <View
                 style={{

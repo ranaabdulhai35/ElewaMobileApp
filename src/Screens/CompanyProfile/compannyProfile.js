@@ -9,7 +9,7 @@ import {
   ImageBackground,
   StyleSheet,
 } from 'react-native';
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {GeneralStyles} from '../../Components/Global/generalStyles';
 import {COLORS, FONTS} from '../../BusinessLogics/Constants';
 import * as SVGS from '../../Ui/Assets/Svgs/index';
@@ -28,20 +28,23 @@ import Tags from '../Profile/Components/tags';
 import {useNavigation} from '@react-navigation/native';
 import UserCard from '../Profile/Components/userCard';
 import JobCard from '../FindWork/jobCard';
-
+import {useSelector} from 'react-redux';
+import httpRequest from '../../BusinessLogics/Requests/axios';
 const width = Dimensions.get('window').width;
 
-const CompanyProfile = () => {
+const CompanyProfile = ({route}) => {
   const navigation = useNavigation();
-
+  const {jobDetails} = route.params;
+  const token = useSelector(state => state.auth.token);
   const [selectedTab, steSelectedTab] = useState('About the companny');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndex2, setCurrentIndex2] = useState(0);
   const [currentIndex3, setCurrentIndex3] = useState(0);
-
+  const [companyData, setCompanyData] = useState('');
   const carouselRef = useRef();
   const carouselRef2 = useRef();
   const carouselRef3 = useRef();
+  const [showJobCard, setShowJobCard] = useState(false);
 
   const tabs = ['About the companny', 'Active posts', 'Portfolio'];
   const tags = ['Actor', 'Voice over', 'Event', 'Editor'];
@@ -106,6 +109,39 @@ const CompanyProfile = () => {
       company: 'Clermont, FL',
     },
   ];
+
+  useEffect(() => {
+    getCompanyProfileDetail();
+
+    if (jobDetails?.id) {
+      const timer = setTimeout(() => {
+        setShowJobCard(true);
+      }, 2000);
+
+      return () => clearTimeout(timer); // Cleanup the timeout on unmount
+    }
+  }, [jobDetails]);
+
+  const getCompanyProfileDetail = async () => {
+    try {
+      const response = await httpRequest.get(
+        `/utils/public_vendor_crew_profile?id=${jobDetails?.id}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      );
+      if (response?.status === 200) {
+        setCompanyData(response?.data?.data);
+      }
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data);
+      }
+    }
+  };
+
   const renderItem = ({item}) => {
     return (
       <View style={styles.itemContainer}>
@@ -345,7 +381,7 @@ const CompanyProfile = () => {
             GeneralStyles.generalPadding,
             {paddingBottom: HEIGHT_BASE_RATIO(20)},
           ]}>
-          <UserCard />
+          <UserCard data={companyData} />
           <Tabs
             data={tabs}
             handleTab={handleSelectedTab}
@@ -368,16 +404,7 @@ const CompanyProfile = () => {
                 fontFamily: FontFamily.Regular,
                 letterSpacing: 0.15,
               }}>
-              I started to work in the industry as a runner, while I was still
-              studying film at the university. After finishing my education in
-              Turkey, started my career as a full-time Assistant director. I
-              worked as 3rd, 2nd, Floor 2nd. I have a good experience with
-              period and action films and crowded scenes. Back in Turkey, I
-              worked with some of the best Turkish directors and also had a
-              chance to work with international big projects. 2 years ago moved
-              to London. I passed my Covid-19 Supervisor training test and got
-              my certificate from the first option. I also finished my First Aid
-              and Health and Safety training.
+              {companyData?.about}
             </Text>
           </View>
           <Tags tags={tags} />
@@ -419,9 +446,13 @@ const CompanyProfile = () => {
               Active Posts
             </Text>
             <View style={{marginTop: HEIGHT_BASE_RATIO(25)}}>
-              {posts.map(() => {
-                return <JobCard />;
-              })}
+              {showJobCard && (
+                <JobCard
+                  searchText={null}
+                  submitText={null}
+                  jobDetails={jobDetails}
+                />
+              )}
             </View>
           </View>
           <View

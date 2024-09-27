@@ -20,12 +20,13 @@ import {useSelector} from 'react-redux';
 import httpRequest from '../../BusinessLogics/Requests/axios';
 import moment from 'moment';
 import FavouriteAddButton from '../../Components/Common/favouriteAddButton';
-const JobCard = ({searchText, submitText}) => {
+const JobCard = ({searchText, submitText, jobDetails}) => {
   const navigation = useNavigation();
   const [jobs, setJobs] = useState('');
   const [Page, setPage] = useState(1);
   const [load, setLoad] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(true);
+  const token = useSelector(state => state.auth.token);
 
   useEffect(() => {
     setPage(1);
@@ -44,16 +45,19 @@ const JobCard = ({searchText, submitText}) => {
 
   const jobsApi = async (currentPage, searchText) => {
     try {
-      const response = await httpRequest.get(
-        submitText
-          ? `/utils/public_job_list?page=${currentPage}&search=${searchText}`
-          : `/utils/public_job_list?page=${currentPage}`,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
+      const url = jobDetails?.id
+        ? `vendor/job_list?page=${currentPage}&vendor_id=${jobDetails?.id}`
+        : submitText
+        ? `/utils/public_job_list?page=${currentPage}&search=${searchText}`
+        : `/utils/public_job_list?page=${currentPage}`;
+
+      const response = await httpRequest.get(url, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `${token}`,
         },
-      );
+      });
+      console.log();
       if (response?.status === 200) {
         const newJobs = response?.data?.data?.data;
         if (!newJobs || newJobs.length === 0 || newJobs === undefined) {
@@ -62,11 +66,12 @@ const JobCard = ({searchText, submitText}) => {
         } else {
           setJobs(prevJobs => [...prevJobs, ...newJobs]);
         }
+        console.log('response', response);
       }
     } catch (error) {
       if (error.response) {
         setLoad(false);
-        console.log(error.response.data);
+        console.log('error.response.data', error.response);
       }
     } finally {
       setIsLoadingMore(false);
@@ -113,6 +118,7 @@ const JobCard = ({searchText, submitText}) => {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('JobPost', {jobDetail: data});
+            searchText = null;
           }}>
           <Text style={styles.companyDetails}>View company details →</Text>
         </TouchableOpacity>
