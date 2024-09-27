@@ -32,6 +32,7 @@ const AcademicInfo = ({route}) => {
   const token = useSelector(state => state?.auth?.token);
   const title = route?.params?.title;
   const description = route?.params?.description;
+  console.log('title and description', title, description);
   const SenderValidationSchema = Yup.object().shape({
     education: Yup.string().required('Education is required'),
   });
@@ -98,7 +99,9 @@ const AcademicInfo = ({route}) => {
                 if (response?.data?.success) {
                   console.log('login respose', response?.data?.data?.id);
                   await dispatch(AuthSlice.actions.setIsProfileCompleted(true));
-                  await dispatch(AuthSlice.actions.setId(response?.data?.data?.id));
+                  await dispatch(
+                    AuthSlice.actions.setId(response?.data?.data?.id),
+                  );
                   navigation.navigate('StackNavigator');
                 }
               } catch (e) {

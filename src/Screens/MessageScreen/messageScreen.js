@@ -20,6 +20,7 @@ import httpRequest from '../../BusinessLogics/Requests/axios';
 import {useSelector} from 'react-redux';
 import moment from 'moment';
 import {formatDate} from '../../Components/Utils/dateFormat';
+import {launchImageLibrary} from 'react-native-image-picker';
 
 const MessageScreen = ({route}) => {
   const {data} = route.params;
@@ -27,10 +28,17 @@ const MessageScreen = ({route}) => {
   const [messages, setMessage] = useState([]);
   const [addMessage, setAddMessage] = useState('');
   const [socket, setSocket] = useState(null);
+  const [showOptions, setShowOptions] = useState(false);
+  const [loader, setLoader] = useState(false);
+  const [selectImage, setSelectImage] = useState();
+  const [selectVideo, setSelectVIdeo] = useState();
 
+  console.log('id', state);
   useEffect(() => {
     getMessages();
-    const ws = new WebSocket('wss://elwa-be.atsol.io/ws/users/97/chat/');
+    const ws = new WebSocket(
+      `wss://elwa-be.atsol.io/ws/users/${state.id}/chat/`,
+    );
 
     ws.onopen = () => {
       console.log('WebSocket connection opened');
@@ -58,6 +66,7 @@ const MessageScreen = ({route}) => {
   }, []);
 
   const getMessages = async () => {
+    setLoader(true);
     try {
       const response = await httpRequest(
         `/chat/chats/${data?.roomId}/messages`,
@@ -75,6 +84,8 @@ const MessageScreen = ({route}) => {
       if (error.response) {
         console.log('error.response.data', error.response.data);
       }
+    } finally {
+      setLoader(false);
     }
   };
 
@@ -89,7 +100,7 @@ const MessageScreen = ({route}) => {
         action: 'message',
         roomId: data?.roomId,
         message: addMessage,
-        user: 98,
+        user: state.id,
         timestamp,
       };
       socket.send(JSON.stringify(messagePayload));
@@ -161,10 +172,41 @@ const MessageScreen = ({route}) => {
       </View>
     );
   };
+  const imagePicker = () => {
+    let options = {storageOptions: {path: 'image'}};
+    launchImageLibrary(options, response => {
+      if (response.didCancel) {
+        console.log('User cancelled the picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else {
+        console.log('Video URI: ', response.assets[0].uri);
+        setSelectImage(response.assets[0].uri);
+      }
+    });
+  };
+  const handleSelectVideo = () => {
+    let options = {
+      mediaType: 'video',
+      includeBase64: false,
+      selectionLimit: 1,
+    };
+
+    launchImageLibrary(options, response => {
+      if (response.didCancel) {
+        console.log('User cancelled the picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else {
+        console.log('Video URI: ', response.assets[0].uri);
+        setSelectVIdeo(response.assets[0].uri);
+      }
+    });
+  };
 
   return (
     <KeyboardAvoidingView
-      style={{flex: 1}}
+      style={{flex: 1, backgroundColor: COLORS.LIGHTEST_GRAY}}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <Header4
         Color={COLORS.WHITE}
@@ -178,11 +220,11 @@ const MessageScreen = ({route}) => {
       <View
         style={{
           flex: 1,
-          backgroundColor: COLORS.WHITE,
+          backgroundColor: COLORS.LIGHTEST_GRAY,
           marginBottom: HEIGHT_BASE_RATIO(15),
           marginHorizontal: WIDTH_BASE_RATIO(10),
         }}>
-        {messages.length === 0 ? (
+        {loader ? (
           <View
             style={{
               alignItems: 'center',
@@ -217,6 +259,42 @@ const MessageScreen = ({route}) => {
           justifyContent: 'center',
           flexDirection: 'row',
         }}>
+        {showOptions && (
+          <View
+            style={{
+              width: WIDTH_BASE_RATIO(120),
+              height: HEIGHT_BASE_RATIO(50),
+              backgroundColor: COLORS.CARD_BG,
+              borderRadius: 5,
+              position: 'absolute',
+              zIndex: 1,
+              bottom: HEIGHT_BASE_RATIO(70),
+              left: WIDTH_BASE_RATIO(10),
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              paddingHorizontal: WIDTH_BASE_RATIO(15),
+            }}>
+            <TouchableOpacity
+              onPress={() => {
+                imagePicker();
+                setShowOptions(false);
+              }}>
+              <Text style={{...FONTS.NormalText, color: COLORS.BLACK}}>
+                Picture
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                handleSelectVideo();
+                setShowOptions(false);
+              }}>
+              <Text style={{...FONTS.NormalText, color: COLORS.BLACK}}>
+                Video
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
         <TouchableOpacity
           style={{
             width: WIDTH_BASE_RATIO(37.6),
@@ -226,7 +304,8 @@ const MessageScreen = ({route}) => {
             alignItems: 'center',
             justifyContent: 'center',
             marginRight: WIDTH_BASE_RATIO(10),
-          }}>
+          }}
+          onPress={() => setShowOptions(!showOptions)}>
           <SVGS.Add width={20} height={20} />
         </TouchableOpacity>
         <CustomInputTitle

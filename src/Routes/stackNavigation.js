@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 import Login from '../Screens/AuthenticationStack/login/login';
 import AuthNavigation from './authNavigation';
 import EditProfile from '../Screens/EditProfile/editProfile';
+import VendorCrewProfile from '../Screens/VendorCrewProfile/vendorCrewProfile';
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
@@ -38,6 +39,7 @@ const StackNavigation = () => {
         <Stack.Screen name="AllContracts" component={AllContracts} />
         <Stack.Screen name="TransactionHistory" component={TransactionHistory} />
         <Stack.Screen name="EndContract" component={EndContract} />
+        <Stack.Screen name="VendorCrewProfile" component={VendorCrewProfile} />
       </Stack.Navigator>
     </>
   );

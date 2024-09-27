@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: WIDTH_BASE_RATIO(15),
     paddingVertical: HEIGHT_BASE_RATIO(12),
     flexDirection: 'row',
+    justifyContent:'space-between'
   },
   linkButton: {
     width: WIDTH_BASE_RATIO(27),

@@ -1,9 +1,7 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {COLORS, FONTS} from '../../../BusinessLogics/Constants';
-import {
-  HEIGHT_BASE_RATIO,
-} from '../../../BusinessLogics/Utils/helpers';
+import {HEIGHT_BASE_RATIO} from '../../../BusinessLogics/Utils/helpers';
 import {FontFamily} from '../../../Components/Global/generalFonts';
 
 const Tags = ({tags}) => {
@@ -15,7 +13,7 @@ const Tags = ({tags}) => {
         marginTop: HEIGHT_BASE_RATIO(25),
         justifyContent: 'space-between',
       }}>
-      {tags.map(item => {
+      {tags?.map(item => {
         return (
           <View
             style={{

@@ -33,6 +33,7 @@ const CustomButton = ({
   marginRight,
   shadowStyle,
   svgIcon,
+  display,
 }) => {
   return (
     <TouchableOpacity
@@ -51,6 +52,7 @@ const CustomButton = ({
           marginBottom: marginBottom ? marginBottom : 0,
           marginLeft: marginLeft ? marginLeft : 0,
           marginRight: marginRight ? marginRight : 0,
+          display: display ? display : 'flex',
           ...shadowStyle,
         },
       ]}

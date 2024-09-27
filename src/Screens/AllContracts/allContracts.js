@@ -19,7 +19,6 @@ import {GeneralStyles} from '../../Components/Global/generalStyles';
 import CustomInputTitle from '../../Components/Common/customInputTitle';
 import Tabs from '../Profile/Components/tabs';
 import {FontFamily} from '../../Components/Global/generalFonts';
-import Offers from '../Jobs/Components/offers';
 import {styles} from '../FindWork/jobCard';
 import CustomButton from '../../Components/Common/customButton';
 

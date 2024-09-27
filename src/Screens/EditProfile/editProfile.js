@@ -394,7 +394,7 @@ const EditProfile = () => {
               onSubmitEditing={handleAddTag}
               returnKeyType="done"
             />
-          </View>
+          </View> 
 
           <View style={{marginTop: HEIGHT_BASE_RATIO(50)}}>
             <Text style={FONTS.TTBold_20_Black}>About</Text>

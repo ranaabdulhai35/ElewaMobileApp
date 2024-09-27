@@ -7,13 +7,18 @@ import * as Images from '../../../Ui/Assets/Images/index';
 import {
   FONT_SIZE,
   HEIGHT_BASE_RATIO,
+  simpleTruncateText,
+  truncateText,
   WIDTH_BASE_RATIO,
 } from '../../../BusinessLogics/Utils/helpers';
 import Header from '../../../Components/Common/header';
 import {styles} from '../Styles/styles';
 import {FontFamily} from '../../../Components/Global/generalFonts';
+import {useNavigation} from '@react-navigation/native';
+import CustomButton from '../../../Components/Common/customButton';
 
-const UserCard = () => {
+const UserCard = ({data}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.userInfoCard}>
       <View
@@ -22,13 +27,25 @@ const UserCard = () => {
           flexDirection: 'row',
           height: HEIGHT_BASE_RATIO(76),
         }}>
-        <Image
-          source={Images.profilePicture}
-          style={{
-            width: WIDTH_BASE_RATIO(71),
-            height: HEIGHT_BASE_RATIO(76),
-          }}
-        />
+        {data?.profile_picture ? (
+          <Image
+            source={Images.profilePicture}
+            style={{
+              width: WIDTH_BASE_RATIO(71),
+              height: HEIGHT_BASE_RATIO(76),
+            }}
+          />
+        ) : (
+          <View
+            style={{
+              width: WIDTH_BASE_RATIO(71),
+              height: HEIGHT_BASE_RATIO(76),
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <SVGS.Profile />
+          </View>
+        )}
         <View
           style={{
             marginLeft: WIDTH_BASE_RATIO(15),
@@ -45,7 +62,10 @@ const UserCard = () => {
                 marginRight: 6,
                 fontSize: FONT_SIZE(20),
               }}>
-              Julian Su
+              {simpleTruncateText(
+                data?.first_name + ' ' + truncateText(data?.last_name),
+                12,
+              )}
             </Text>
             <SVGS.Verify />
           </View>
@@ -55,17 +75,17 @@ const UserCard = () => {
               fontFamily: FontFamily.Medium,
               color: COLORS.GRAY_3,
             }}>
-            Animation Voice actress
+            {data?.occupation ? data?.occupation : 'None'}
           </Text>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <SVGS.Location />
             <Text style={{...FONTS.TTNormal_14_Black, marginLeft: 5}}>
-              Clermont, FL
+              {simpleTruncateText(data?.country + ', ' + data?.city, 22)}
             </Text>
           </View>
         </View>
       </View>
-      <View style={{flexDirection: 'row'}}>
+      {/* <View style={{flexDirection: 'row'}}>
         <View style={styles.linkButton}>
           <SVGS.Link />
         </View>
@@ -84,7 +104,30 @@ const UserCard = () => {
           <Text style={{...FONTS.TTSmall_12_Black}}>4.3</Text>
           <SVGS.Star />
         </View>
-      </View>
+      </View> */}
+      <CustomButton
+        backgroundColor={COLORS.PRIMARY}
+        width={WIDTH_BASE_RATIO(85)}
+        height={HEIGHT_BASE_RATIO(38)}
+        borderRadius={6}
+        boderColor={COLORS.PRIMARY}
+        shadowStyle={{
+          shadowColor: COLORS.PRIMARY,
+          shadowOffset: {width: 0, height: 12},
+          shadowOpacity: 0.96,
+          shadowRadius: 3,
+          elevation: 15,
+        }}
+        onPress={() => {
+          navigation.navigate('EditProfile');
+        }}
+        text={'Edit Profile'}
+        textStyle={{
+          ...FONTS.TTNormal_12_Black,
+          color: COLORS.WHITE,
+          fontFamily: FontFamily.SemiBold,
+        }}
+      />
     </View>
   );
 };

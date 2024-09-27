@@ -8,6 +8,7 @@ import {useNavigation} from '@react-navigation/native';
 import {
   FONT_SIZE,
   HEIGHT_BASE_RATIO,
+  simpleTruncateText,
   WIDTH_BASE_RATIO,
 } from '../../BusinessLogics/Utils/helpers';
 import {GeneralStyles} from '../../Components/Global/generalStyles';
@@ -39,6 +40,7 @@ const JobPost = ({route}) => {
       );
       if (response?.status === 200) {
         setJobDetail(response?.data?.data);
+        console.log('job details response', response?.data?.data);
       }
     } catch (error) {
       if (error.response) {
@@ -68,7 +70,40 @@ const JobPost = ({route}) => {
       }
     }
   };
-
+  const createChatRoom = async () => {
+    try {
+      const data = JSON.stringify({
+        members: [state.id, jobDetail?.id],
+        type: 'DM',
+      });
+      const response = await httpRequest.post('/chat/chats', data, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: state.token,
+        },
+      });
+      if (response.status == 200) {
+        console.log('room', response.data.roomId);
+        navigation.navigate('MessageScreen', {
+          data: {
+            roomId: response.data.roomId,
+            member: [
+              {
+                first_name: jobDetails?.vendor?.company_name,
+                last_name: '',
+                profile_picture: jobDetails?.vendor?.profile_picture,
+              },
+              {},
+            ],
+          },
+        });
+      }
+    } catch (e) {
+      if (e.response) {
+        console.log(e.response.data);
+      }
+    }
+  };
   return (
     <>
       <Header
@@ -109,7 +144,6 @@ const JobPost = ({route}) => {
             style={{
               flexDirection: 'row',
               alignItems: 'center',
-              justifyContent: 'space-between',
             }}>
             <Image
               source={{uri: jobDetails?.vendor?.profile_picture?.cdn_link}}
@@ -117,16 +151,13 @@ const JobPost = ({route}) => {
                 width: WIDTH_BASE_RATIO(60),
                 height: HEIGHT_BASE_RATIO(65),
                 borderRadius: 50,
-                marginRight: WIDTH_BASE_RATIO(10),
+                marginRight: WIDTH_BASE_RATIO(15),
               }}
               resizeMode="cover"
             />
             <View style={{justifyContent: 'space-between'}}>
               <View style={styles.cardHeader}>
                 <Text style={styles.title}>{jobDetails?.job_title}</Text>
-                <TouchableOpacity style={styles.likeButton}>
-                  <SVGS.Like />
-                </TouchableOpacity>
               </View>
               <Text style={styles.company}>
                 {jobDetails?.vendor?.company_name}
@@ -142,7 +173,10 @@ const JobPost = ({route}) => {
                 <View style={styles.infoItem}>
                   <SVGS.PostLocation />
                   <Text style={styles.infoText}>
-                    {jobDetails?.city}, {jobDetails?.country}
+                    {simpleTruncateText(
+                      jobDetails?.country + ', ' + jobDetails?.city,
+                      18,
+                    )}
                   </Text>
                 </View>
               </View>
@@ -162,12 +196,13 @@ const JobPost = ({route}) => {
                 shadowRadius: 3,
                 elevation: 15,
               }}
+              display={state.role == 'vendor' ? 'none' : 'flex'}
               //   onPress={() => {
               //     navigation.navigate('ProfessionInfo');
               //   }}
               marginTop={HEIGHT_BASE_RATIO(20)}
               onPress={() => applyJob()}
-              text={'Apply Job'}
+              text={'Apply'}
               textStyle={{
                 ...FONTS.ButtonText,
                 color: COLORS.WHITE,
@@ -186,9 +221,10 @@ const JobPost = ({route}) => {
                 shadowRadius: 3,
                 elevation: 15,
               }}
-              //   onPress={() => {
-              //     navigation.navigate('ProfessionInfo');
-              //   }}
+              display={state.role == 'crew' ? 'none' : 'flex'}
+              onPress={() => {
+                createChatRoom();
+              }}
               marginTop={HEIGHT_BASE_RATIO(20)}
               text={'Message'}
               textStyle={{
@@ -281,7 +317,10 @@ const JobPost = ({route}) => {
                       ]}>
                       <SVGS.PostLocation />
                       <Text style={[styles.infoText]}>
-                        {jobDetails?.city}, {jobDetails?.country}
+                        {simpleTruncateText(
+                          jobDetails?.country + ', ' + jobDetails?.city,
+                          20,
+                        )}
                       </Text>
                     </View>
                   </View>

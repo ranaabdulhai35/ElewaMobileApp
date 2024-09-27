@@ -76,6 +76,12 @@ export const truncateText = (text, limit) => {
   }
   return text?.slice(0, limit) + '...';
 };
+export const simpleTruncateText = (text, limit) => {
+  if (text?.length <= limit) {
+    return text;
+  }
+  return text?.slice(0, limit);
+};
 
 export const converToThousands = value => {
   let calculatedValue = value / 1000 + 'k';

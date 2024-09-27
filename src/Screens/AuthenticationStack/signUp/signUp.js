@@ -20,7 +20,6 @@ import axios from 'axios';
 import {API_KEY} from '@env';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useDispatch} from 'react-redux';
-console.log(API_KEY);
 const SignUp = () => {
   const navigation = useNavigation();
   const [userDetail, setUserDetail] = useState(userDetail);
